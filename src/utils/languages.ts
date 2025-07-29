@@ -110,6 +110,18 @@ export const languages: Record<string, Language> = {
     name: "Python",
     iconName: "python",
   },
+  bash: {
+    name: "Bash",
+    iconName: "markdown", // Using markdown icon as placeholder
+  },
+  powershell: {
+    name: "PowerShell",
+    iconName: "markdown", // Using markdown icon as placeholder
+  },
+  linux: {
+    name: "Linux",
+    iconName: "markdown", // Using markdown icon as placeholder
+  },
 };
 
 export const getLanguage = (lang: string): Language => {

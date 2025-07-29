@@ -11,10 +11,12 @@ tags:
   [
     "systems-administration", "network-security", "disaster-recovery", "enterprise-it", "best-practices"
   ]
-languages: ["bash", "powershell", "linux"]
+languages: ["python", "javascript", "git"]
 ---
 
 As a Data Systems Administrator in the U.S. Marine Corps Reserve and Field Implementation Specialist at United Airlines, I've learned that effective systems administration requires a methodical approach, continuous learning, and attention to detail.
+
+Modern systems administration relies heavily on automation and scripting. Throughout this guide, I'll demonstrate practical examples using **Python** for automation scripts, **JavaScript** for web-based monitoring tools, and **Git** for version control of configurations and scripts - three essential technologies in today's IT infrastructure management.
 
 ## Network Asset Management
 
@@ -45,6 +47,33 @@ if [ $? -eq 0 ]; then
 else
     echo "Gateway unreachable - investigate immediately"
 fi
+```
+
+```python
+# Python network monitoring with alerts
+import subprocess
+import smtplib
+from datetime import datetime
+
+def check_network_health():
+    hosts = ['192.168.1.1', '8.8.8.8', 'google.com']
+    failed_hosts = []
+    
+    for host in hosts:
+        result = subprocess.run(['ping', '-c', '1', host], 
+                              capture_output=True, text=True)
+        if result.returncode != 0:
+            failed_hosts.append(host)
+    
+    if failed_hosts:
+        send_alert(f"Network issues detected: {', '.join(failed_hosts)}")
+        return False
+    return True
+
+def send_alert(message):
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    print(f"[{timestamp}] ALERT: {message}")
+    # Add email notification logic here
 ```
 
 ## Security Protocols
@@ -136,6 +165,54 @@ $trigger = New-ScheduledTaskTrigger -Weekly -DaysOfWeek Sunday -At 2AM
 Register-ScheduledTask -TaskName "WeeklyLogCleanup" -Action $action -Trigger $trigger
 ```
 
+```javascript
+// JavaScript-based system dashboard for real-time monitoring
+class SystemDashboard {
+    constructor() {
+        this.updateInterval = 5000; // 5 seconds
+        this.initDashboard();
+    }
+
+    async fetchSystemStats() {
+        try {
+            const response = await fetch('/api/system-stats');
+            const data = await response.json();
+            return data;
+        } catch (error) {
+            console.error('Failed to fetch system stats:', error);
+            return null;
+        }
+    }
+
+    updateDashboard(stats) {
+        document.getElementById('cpu-usage').textContent = `${stats.cpu}%`;
+        document.getElementById('memory-usage').textContent = `${stats.memory}%`;
+        document.getElementById('disk-usage').textContent = `${stats.disk}%`;
+        
+        // Update status indicators
+        this.updateStatusIndicator('network', stats.networkStatus);
+        this.updateStatusIndicator('services', stats.servicesStatus);
+    }
+
+    updateStatusIndicator(elementId, status) {
+        const indicator = document.getElementById(elementId);
+        indicator.className = status === 'healthy' ? 'status-green' : 'status-red';
+    }
+
+    initDashboard() {
+        setInterval(async () => {
+            const stats = await this.fetchSystemStats();
+            if (stats) this.updateDashboard(stats);
+        }, this.updateInterval);
+    }
+}
+
+// Initialize dashboard on page load
+document.addEventListener('DOMContentLoaded', () => {
+    new SystemDashboard();
+});
+```
+
 ### Configuration Management
 
 Use configuration management tools to maintain consistency:
@@ -144,6 +221,71 @@ Use configuration management tools to maintain consistency:
 - Version control all scripts and configs
 - Implement change approval processes
 - Test changes in staging environments
+
+```bash
+# Git workflow for configuration management
+# Initialize configuration repository
+git init /etc/config-repo
+cd /etc/config-repo
+
+# Add configuration files to version control
+git add nginx.conf
+git add firewall-rules.txt
+git add monitoring-config.yml
+git commit -m "Initial configuration baseline"
+
+# Create feature branch for changes
+git checkout -b "update-nginx-ssl"
+# Make configuration changes
+vim nginx.conf
+git add nginx.conf
+git commit -m "Update SSL configuration for enhanced security"
+
+# Push to remote for review
+git push origin update-nginx-ssl
+```
+
+```python
+# Python script for automated configuration deployment
+import subprocess
+import os
+from datetime import datetime
+
+class ConfigDeployment:
+    def __init__(self, repo_path, config_dir):
+        self.repo_path = repo_path
+        self.config_dir = config_dir
+        
+    def backup_current_config(self):
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        backup_dir = f"/backup/config_{timestamp}"
+        subprocess.run(['cp', '-r', self.config_dir, backup_dir])
+        return backup_dir
+    
+    def deploy_from_git(self, branch='main'):
+        # Pull latest changes
+        os.chdir(self.repo_path)
+        subprocess.run(['git', 'checkout', branch])
+        subprocess.run(['git', 'pull', 'origin', branch])
+        
+        # Copy configurations
+        subprocess.run(['rsync', '-av', f"{self.repo_path}/", 
+                       self.config_dir])
+        
+        # Restart services
+        self.restart_services()
+    
+    def restart_services(self):
+        services = ['nginx', 'firewall', 'monitoring']
+        for service in services:
+            subprocess.run(['systemctl', 'restart', service])
+            print(f"Restarted {service}")
+
+# Usage
+deployer = ConfigDeployment('/etc/config-repo', '/etc/')
+backup_path = deployer.backup_current_config()
+deployer.deploy_from_git('production')
+```
 
 ## Best Practices Summary
 

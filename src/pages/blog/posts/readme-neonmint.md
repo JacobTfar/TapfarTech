@@ -1,22 +1,36 @@
 ---
 layout: /src/layouts/MarkdownPostLayout.astro
-title: NeonMint Template Documentation
-author: Fernando López
-description: "NeonMint is a modern, minimalist template crafted for developers and digital creatives. Its dark-themed layout with mint green highlights delivers a sleek, elegant, and functional visual experience—perfect for portfolios, dashboards, or tech landing pages."
+title: Building TapfarTech - From Template to Professional Brand
+author: Jacob Tapfar
+description: "Learn how TapfarTech transformed a modern template into a professional business website. Discover the development process, customization strategies, and technical decisions behind creating a compelling online presence for IT consulting and web services."
 image:
   url: "/images/projects/neonmint.webp"
-  alt: "Screenshot of NeonMint, a modern and minimalist web template built with Astro and TailwindCSS. It displays various sections such as blog, portfolio, work experience, and Markdown guide, in both light and dark modes with mint green accents."
+  alt: "TapfarTech website transformation showcasing modern design with dark theme and mint green accents, built with Astro and TailwindCSS for professional IT consulting services."
 pubDate: 2025-04-04
 tags:
   [
-    "documentation", "portfolio", "web-development", "astro", "tailwindcss"
+    "web-development", "business-branding", "astro", "tailwindcss", "portfolio"
   ]
-languages: ["astro", "javascript", "tailwind", "markdown"]
+languages: ["astro", "javascript", "tailwind"]
 ---
 
-## 🎯 Overview
+## 🎯 Project Overview
 
-**NeonMint** is a minimalist and modern template designed for developers and digital creatives. Its dark-toned aesthetic with mint green accents offers a clean, elegant, and functional visual experience, ideal for portfolios, dashboards, or tech landing pages.
+**TapfarTech** represents the evolution of a modern template into a professional business website. This project demonstrates how strategic customization and technical expertise can transform a foundation into a compelling online presence for IT consulting and web development services.
+
+## 🚀 Business Goals
+
+### Professional Positioning
+- Showcase systems administration expertise from military and airline industry experience
+- Establish credibility in web development and IT consulting
+- Create a platform for attracting small business clients
+- Build a foundation for scaling from side hustle to full business operations
+
+### Technical Objectives
+- Implement modern web technologies (Astro, TailwindCSS, TypeScript)
+- Ensure fast loading times and optimal SEO performance
+- Create responsive design for all device types
+- Establish scalable content management for future growth
 
 ## 📁 Project Structure
 
