@@ -1,12 +1,11 @@
 
-# NeonMint Template Documentation
+# TapfarTech Website
 
-![neonmint](https://github.com/user-attachments/assets/ae539704-2292-492f-882c-c90595b34717)
-
+![TapfarTech](https://github.com/user-attachments/assets/ae539704-2292-492f-882c-c90595b34717)
 
 ## 🎯 Overview
 
-**NeonMint** is a minimalist and modern template designed for developers and digital creatives. Its dark-toned aesthetic with mint green accents offers a clean, elegant, and functional visual experience, ideal for portfolios, dashboards, or tech landing pages.
+**TapfarTech** is a cutting-edge technology company website built with the NeonMint template. This modern and minimalist design showcases our technology solutions, services, and expertise in web development, cloud infrastructure, and digital transformation.
 
 ## 📁 Project Structure
 

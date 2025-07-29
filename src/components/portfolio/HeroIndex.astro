@@ -42,13 +42,17 @@ const {
           </div>
           <div class="relative z-20 flex w-full rounded-full bg-mint-900">
             <div
-              class="w-full aspect-square rounded-full bg-center bg-cover"
-              style={`background-image: url(${profileImage})`}
+              class="w-full aspect-square rounded-full overflow-hidden bg-center bg-cover"
               aria-label={profileAlt}
             >
+              <img 
+                src={profileImage} 
+                alt={profileAlt}
+                class="w-full h-full object-cover rounded-full"
+              />
               <a
                 href={profileLink}
-                class="flex h-full w-full"
+                class="flex h-full w-full absolute inset-0"
                 aria-label="View about me page"></a>
             </div>
           </div>
@@ -78,11 +82,11 @@ const {
           <span
             class="bg-linear-to-r from-riptide-500 to-mint-500 bg-clip-text font-black text-transparent dark:from-riptide-300 dark:to-mint-200"
             >{profileTitle}</span
-          > with <span
+          > and <span
             class="bg-linear-to-r from-riptide-500 to-mint-500 bg-clip-text font-black text-transparent dark:from-riptide-300 dark:to-mint-200"
-            >8 years of experience</span
-          >, passionate about development, technology, and coffee that sparks
-          ideas. I love bringing digital projects to life. 🚀☕
+            >U.S. Marine Corps Reservist</span
+          >. IT professional specializing in systems administration, disaster recovery, 
+          and web solutions that empower small businesses to succeed. 🚀🎖️
         </p>
 
         <div class="flex gap-4 max-sm:flex-col max-sm:items-center">
@@ -93,8 +97,8 @@ const {
           />
           <Button
             link={profileLink}
-            text="About Me"
-            iconName="person"
+            text="Learn More"
+            iconName="info"
             variant="dark"
           />
         </div>

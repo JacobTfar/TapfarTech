@@ -1,32 +1,31 @@
 ---
 layout: /src/layouts/MarkdownPostLayout.astro
-title: The Complete Markdown Guide
-author: Fernando López
-description: "A comprehensive guide to Markdown syntax, covering everything from basic formatting to advanced features. Learn how to create headers, lists, emphasis, and more with this essential markup language for content creation."
+title: Systems Administration Best Practices
+author: Jacob Tapfar
+description: "Essential best practices for systems administration, covering network management, security protocols, and disaster recovery planning. Learn from a U.S. Marine Corps Reservist and TapfarTech founder's experience in enterprise IT environments."
 image:
-  url: "/images/posts/markdown.webp"
-  alt: "Example of animated borders with Tailwind CSS in a dark design, featuring a vibrant color gradient background."
-pubDate: 2025-04-05
+  url: "/images/posts/systems-administration.webp"
+  alt: "Systems administration dashboard showing network monitoring, server status, and security protocols - TapfarTech IT expertise"
+pubDate: 2025-07-28
 tags:
   [
-    "documentation", "tutorial", "web-development", "content-creation", "writing"
+    "systems-administration", "network-security", "disaster-recovery", "enterprise-it", "best-practices"
   ]
-languages: ["markdown", "html", "css"]
+languages: ["bash", "powershell", "linux"]
 ---
 
-Markdown is a lightweight markup language that you can use to add formatting elements to plaintext text documents. Created by John Gruber in 2004, Markdown is now one of the world's most popular markup languages.
+As a Data Systems Administrator in the U.S. Marine Corps Reserve and Field Implementation Specialist at United Airlines, I've learned that effective systems administration requires a methodical approach, continuous learning, and attention to detail.
 
-## Basic Syntax
+## Network Asset Management
 
-### Headers
+### Infrastructure Documentation
 
-```markdown
-# H1
-## H2
-### H3
-#### H4
-##### H5
-###### H6
+```bash
+# Document all network assets with proper inventory tracking
+asset_id="NET-001"
+asset_type="Server"
+location="Data Center A"
+responsible_admin="Jacob Tapfar"
 ```
 
 ### Emphasis

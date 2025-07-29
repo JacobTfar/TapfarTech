@@ -1,43 +1,61 @@
 ---
 layout:  /src/layouts/ProjectLayout.astro
-title: 'NeonMint'
-pubDate: 2025-04-05
-description: 'NeonMint is a modern, minimalist template crafted for developers and digital creatives.'
-languages: ["astro", "tailwind", "cloudflare", "javascript","vercel"]
+title: 'TapfarTech Corporate Website'
+pubDate: 2025-07-28
+description: 'Professional website for TapfarTech, built with Astro and customized to showcase military-grade IT services and systems administration expertise.'
+languages: ["astro", "tailwind", "javascript", "markdown"]
 image:
   url: "/images/projects/neonmint.webp"
-  alt: "Thumbnail of Astro arches."
+  alt: "TapfarTech website homepage featuring Jacob Tapfar's professional profile and service offerings"
 --- 
 
-**NeonMint** is a modern, minimalist web template created for developers, designers, and digital creatives. This project aims to offer an elegant and functional visual experience, combining a dark-toned aesthetic with mint green accents to highlight content without distractions.
+**TapfarTech Website** is a professional portfolio and service showcase built to highlight my technical skills and advertise side hustle services for small businesses. Starting with the NeonMint template, I customized it to create a platform that demonstrates my capabilities while offering website building and IT services as I grow my business.
 
-Developed with **Astro** and styled with **TailwindCSS**, NeonMint focuses on speed, modularity, and a component-centered architecture.
+The site serves as both a resume showcase featuring my military service and technical experience, and a marketing platform for the freelance services I can provide to small businesses on the side.
 
-## 🧩 Features
+## 🎯 Key Customizations
 
-- Responsive and minimalist design
-- Dark mode aesthetic with mint green accents
-- Clean and reusable UI components
-- Ideal for portfolios, dashboards or tech landing pages
-- Modern typography and clear visual hierarchy
-- Developed with **Astro**
-- Styled with **TailwindCSS**
+- **Personal branding** showcasing military service and IT experience
+- **Skills demonstration** through the website itself as a portfolio piece
+- **Service advertising** for website building and small business IT support
+- **Professional credibility** highlighting experience with United Airlines and Marine Corps
+- **Client testimonials** starting with AJLTechNJ.com project
+- **Growth platform** designed to scale as the side business develops
 
-## 💡 Technologies used
+## 💼 Services Advertised
 
-- Astro
-- TailwindCSS
-- HTML5
-- JavaScript
+- Website development for small businesses
+- Basic IT consulting and support
+- Digital presence setup and optimization
+- Simple web solutions and maintenance
+- Technical guidance for small business owners
 
+## �️ Technologies Used
 
-## 🌐 Demo
+- **Astro** - Static site generation and performance
+- **TailwindCSS** - Professional styling and responsive design
+- **Markdown** - Content management for blog and documentation
+- **JavaScript** - Interactive components and functionality
 
-👉 [View live demo](https://github.com/EFEELE/NeonMint) 
+## 🌐 Live Site
 
-## 🎯 Objective
+👉 [Visit TapfarTech.com](https://tapfartech.com)
+👉 [View source code](https://github.com/JacobTfar/TapfarTech)
 
-The purpose of NeonMint is to combine style and functionality in a clean interface that enhances content without overwhelming the user. It's an exercise in design and development focused on visual detail and user experience.
+## 📈 Business Goals
 
+- **Portfolio showcase** demonstrating web development skills
+- **Lead generation** for side hustle services
+- **Professional credibility** through military service background
+- **Service marketing** for small business website needs
+- **Growth foundation** to scale from side hustle to full business
 
-🚀 *Developed by EFEELE.*
+## 🎖️ Military Background as Differentiator
+
+The military service component helps establish:
+- **Reliability and professionalism** for potential clients
+- **Attention to detail** in project execution
+- **Project management skills** from military experience
+- **Trust factor** for small business owners
+
+🚀 *Personal portfolio and side business platform by Jacob Tapfar.*

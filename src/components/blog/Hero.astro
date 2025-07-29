@@ -69,10 +69,14 @@ const {
         >
           <div
             aria-label={profileAlt}
-            class="h-full w-full max-sm:rounded-full rounded-2xl max-sm:size-20 bg-center bg-cover"
-            style={`background-image: url(${profileImage})`}
+            class="h-full w-full max-sm:rounded-full rounded-2xl max-sm:size-20 bg-center bg-cover overflow-hidden"
           >
-            <a href={profileLink} class="h-full w-full flex"></a>
+            <img 
+              src={profileImage} 
+              alt={profileAlt}
+              class="w-full h-full object-cover max-sm:rounded-full rounded-2xl"
+            />
+            <a href={profileLink} class="h-full w-full absolute inset-0 flex"></a>
           </div>
         </div>
         <div
