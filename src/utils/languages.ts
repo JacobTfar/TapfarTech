@@ -1,4 +1,4 @@
-export interface Language {
+﻿export interface Language {
   name: string;
   iconName: string;
   className?: string;
@@ -13,42 +13,37 @@ export const languages: Record<string, Language> = {
     name: "Astro",
     iconName: "astro",
   },
+  aws: {
+    name: "AWS",
+    iconName: "code",
+  },
+  azure: {
+    name: "Azure",
+    iconName: "cloudflare",
+  },
   bootstrap: {
     name: "Bootstrap",
     iconName: "bootstrap",
+  },
+  "ci/cd": {
+    name: "CI/CD",
+    iconName: "git",
   },
   cloudflare: {
     name: "Cloudflare",
     iconName: "cloudflare",
   },
-  html: {
-    name: "HTML 5",
-    iconName: "html",
+  css: {
+    name: "CSS",
+    iconName: "css",
   },
-  javascript: {
-    name: "JavaScript",
-    iconName: "javascript",
+  docker: {
+    name: "Docker",
+    iconName: "code",
   },
-  mongo: {
-    name: "MongoDb",
-    iconName: "mongo",
-  },
-  mysql: {
-    name: "MySQL",
-    className: "bg-[#f6ece1]!",
-    iconName: "mysql",
-  },
-  wordpress: {
-    name: "Wordpress",
-    iconName: "wordpress",
-  },
-  node: {
-    name: "Node.js",
+  express: {
+    name: "Express.js",
     iconName: "node",
-  },
-  tailwind: {
-    name: "Tailwind CSS",
-    iconName: "tailwind",
   },
   figma: {
     name: "Figma",
@@ -58,41 +53,82 @@ export const languages: Record<string, Language> = {
     name: "Firebase",
     iconName: "firebase",
   },
-  markdown: {
-    name: "Markdown",
-    iconName: "markdown",
-  },
-  php: {
-    name: "PHP",
-    iconName: "php",
-  },
-  sass: {
-    name: "Sass",
-    iconName: "sass",
-  },
-  ts: {
-    name: "TypeScript",
-    iconName: "typescript",
+  gatsby: {
+    name: "Gatsby",
+    iconName: "gatsby",
   },
   git: {
     name: "Git",
     iconName: "git",
   },
-  css: {
-    name: "CSS",
-    iconName: "css",
+  html: {
+    name: "HTML 5",
+    iconName: "html",
   },
-  vercel: {
-    name: "Vercel",
-    iconName: "vercel",
+  javascript: {
+    name: "JavaScript",
+    iconName: "javascript",
+  },
+  markdown: {
+    name: "Markdown",
+    iconName: "markdown",
+  },
+  mongodb: {
+    name: "MongoDB",
+    iconName: "mongo",
+  },
+  mongo: {
+    name: "MongoDB",
+    iconName: "mongo",
+  },
+  mysql: {
+    name: "MySQL",
+    className: "bg-[#f6ece1]!",
+    iconName: "mysql",
   },
   netlify: {
     name: "Netlify",
     iconName: "netlify",
   },
-  gatsby: {
-    name: "Gatsby",
-    iconName: "gatsby",
+  node: {
+    name: "Node.js",
+    iconName: "node",
+  },
+  php: {
+    name: "PHP",
+    iconName: "php",
+  },
+  python: {
+    name: "Python",
+    iconName: "python",
+  },
+  react: {
+    name: "React",
+    iconName: "code",
+  },
+  sass: {
+    name: "Sass",
+    iconName: "sass",
+  },
+  tailwind: {
+    name: "Tailwind CSS",
+    iconName: "tailwind",
+  },
+  ts: {
+    name: "TypeScript",
+    iconName: "typescript",
+  },
+  typescript: {
+    name: "TypeScript",
+    iconName: "typescript",
+  },
+  vercel: {
+    name: "Vercel",
+    iconName: "vercel",
+  },
+  wordpress: {
+    name: "WordPress",
+    iconName: "wordpress",
   },
   windsurf: {
     name: "Windsurf",
@@ -106,10 +142,6 @@ export const languages: Record<string, Language> = {
     name: "DeepSeek",
     iconName: "deepseek",
   },
-  python: {
-    name: "Python",
-    iconName: "python",
-  },
   bash: {
     name: "Bash",
     iconName: "markdown", // Using markdown icon as placeholder
@@ -121,9 +153,10 @@ export const languages: Record<string, Language> = {
   linux: {
     name: "Linux",
     iconName: "markdown", // Using markdown icon as placeholder
-  },
+  }
 };
 
 export const getLanguage = (lang: string): Language => {
+  console.log(`getLanguage called with: ${lang}, exists: ${!!languages[lang]}`);
   return languages[lang] || languages.html;
-}; 
+};

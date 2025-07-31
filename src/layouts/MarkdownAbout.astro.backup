@@ -94,14 +94,34 @@ const { frontmatter } = Astro.props;
 
     </div>
   </section>
-  <section class="py-16 px-8 max-md:py-12 mt-10 mb-20 scroll-m-16 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800" id="stack"><div class="flex flex-col gap-12 max-w-5xl justify-center mx-auto"><div class="flex gap-4 items-center justify-center"><Icon class="text-4xl text-riptide-500" name="dashboard" /><Heading text="Tech" textGradient="Stack" level={2} /></div><div class="grid md:grid-cols-3 gap-8"><div class="group relative p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-riptide-300 dark:hover:border-mint-500"><div class="absolute inset-0 bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div><div class="relative text-center"><Icon name="html" class="text-4xl text-orange-500 mb-4 mx-auto" /><h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Front-end</h3><p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">React, Astro, JavaScript, TypeScript, TailwindCSS, and modern UI/UX practices</p></div></div><div class="group relative p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-riptide-300 dark:hover:border-mint-500"><div class="absolute inset-0 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div><div class="relative text-center"><Icon name="node" class="text-4xl text-green-500 mb-4 mx-auto" /><h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Back-end</h3><p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">Node.js, Python, SQL, Firebase, Express, and scalable API design</p></div></div><div class="group relative p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-riptide-300 dark:hover:border-mint-500"><div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div><div class="relative text-center"><Icon name="cloudflare" class="text-4xl text-blue-500 mb-4 mx-auto" /><h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">DevOps</h3><p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">Azure, AWS, Docker, Git, CI/CD, and cloud infrastructure optimization</p></div></div></div><div class="text-center bg-gradient-to-r from-riptide-500 to-mint-500 rounded-2xl p-8 text-white"><h3 class="text-2xl font-bold mb-4">Precision Meets Modern Tech</h3><p class="text-lg text-riptide-100">Delivering enterprise-grade solutions with a focus on discipline, attention to detail, and cutting-edge technology.</p></div></div></section>
+  <section class="py-8 px-8 max-md:py-4 mt-10 mb-20 scroll-m-16" id="stack">
+    <div class="flex flex-col gap-8 max-w-3xl justify-center mx-auto">
+      <div class="flex gap-4 items-center justify-center">
+        <Icon class="text-3xl text-white" name="dashboard" />
+        <Heading text="Stack" textGradient="Technical" level={2} />
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mt-8">
+        <!-- Front-end -->
+        <div class="flex flex-col items-center p-4 rounded-xl border dark:border-mint-800 border-mint-200">
+          <Icon name="code-front" class="text-3xl text-riptide-400 mb-2" />
+          <h3 class="font-medium mb-2">Front-end</h3>
+          <p class="text-sm text-center dark:text-gray-300 text-gray-600">React, Astro, JavaScript, TypeScript, TailwindCSS</p>
+        </div>
+        
+        <!-- Back-end -->
+        <div class="flex flex-col items-center p-4 rounded-xl border dark:border-mint-800 border-mint-200">
+          <Icon name="server" class="text-3xl text-riptide-400 mb-2" />
+          <h3 class="font-medium mb-2">Back-end</h3>
+          <p class="text-sm text-center dark:text-gray-300 text-gray-600">Node.js, Python, SQL, Firebase, Express</p>
+        </div>
+        
+        <!-- DevOps -->
+        <div class="flex flex-col items-center p-4 rounded-xl border dark:border-mint-800 border-mint-200">
+          <Icon name="cloud" class="text-3xl text-riptide-400 mb-2" />
+          <h3 class="font-medium mb-2">DevOps</h3>
+          <p class="text-sm text-center dark:text-gray-300 text-gray-600">Azure, AWS, Docker, Git, CI/CD</p>
+        </div>
+      </div>
+    </div>
+  </section>
   <Contact />
 </Layout>
-
-<style>
-  /* Reset unexpected flex style on svg elements */
-  svg {
-    display: inline;
-  }
-</style>
-

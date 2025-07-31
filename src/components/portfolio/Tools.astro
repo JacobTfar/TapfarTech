@@ -1,54 +1,59 @@
----
-const allTools = [
-  "html",
-  "javascript",
-  "ts",
-  "angular",
-  "astro",
-  
-  "node",
-
-  "css",
-  "tailwind",
-  "sass",
-  "bootstrap",
-
-  "mongo",
-  "firebase",
-  "mysql",
-
-  "cloudflare",
-
-  "figma",
-  "vercel",
-  "netlify",
-  
-  "git",
-  "markdown",
-
-  "php",
-  "wordpress",
-];
-
+﻿---
 import Capsule from "../ui/Capsule.astro";
 
-type ToolVariant = "default" | "center";
-
-// Base classes that are common to all variants
-const baseClasses = "flex flex-wrap gap-4 max-lg:gap-1 grid-auto-efe";
-
-// Variant-specific classes
-const variantClasses: Record<ToolVariant, string> = {
-  default: "cursor-default",
-  center: "justify-center cursor-default",
-};
+interface Props {
+  variant?: "default" | "center";
+  linkEnabled?: boolean;
+  size?: string;
+}
 
 const { variant = "default", linkEnabled = false, size = "md" } = Astro.props;
 
-// Combine base classes with variant-specific classes
-const classes = `${baseClasses} ${variantClasses[variant as ToolVariant]}`;
+// Explicitly define tools for each category - NO MORE SLICING!
+const frontEndTools = ["html", "javascript", "typescript", "astro", "react", "css", "tailwind", "bootstrap"];
+const backEndTools = ["node", "express", "python", "firebase", "mysql", "mongodb"];
+const devOpsTools = ["azure", "aws", "docker", "git", "ci/cd"];
+const designTools = ["figma", "cloudflare", "vercel", "netlify"];
 ---
 
-<div class={classes}>
-  {allTools.map((tool) => <Capsule lang={tool} linkEnabled={linkEnabled} size={size} />)}
+<div class="flex flex-col gap-8">
+  <!-- Front-end Development -->
+  <div>
+    <h3 class="text-xl font-bold mb-4">Front-end Development</h3>
+    <div class="flex flex-wrap gap-4">
+      {frontEndTools.map((tool) => (
+        <Capsule lang={tool} linkEnabled={linkEnabled} size={size} />
+      ))}
+    </div>
+  </div>
+
+  <!-- Back-end Development -->
+  <div>
+    <h3 class="text-xl font-bold mb-4">Back-end Development</h3>
+    <div class="flex flex-wrap gap-4">
+      {backEndTools.map((tool) => (
+        <Capsule lang={tool} linkEnabled={linkEnabled} size={size} />
+      ))}
+    </div>
+  </div>
+
+  <!-- DevOps & Cloud -->
+  <div>
+    <h3 class="text-xl font-bold mb-4">DevOps & Cloud</h3>
+    <div class="flex flex-wrap gap-4">
+      {devOpsTools.map((tool) => (
+        <Capsule lang={tool} linkEnabled={linkEnabled} size={size} />
+      ))}
+    </div>
+  </div>
+
+  <!-- Design & Deployment -->
+  <div>
+    <h3 class="text-xl font-bold mb-4">Design & Deployment</h3>
+    <div class="flex flex-wrap gap-4">
+      {designTools.map((tool) => (
+        <Capsule lang={tool} linkEnabled={linkEnabled} size={size} />
+      ))}
+    </div>
+  </div>
 </div>
