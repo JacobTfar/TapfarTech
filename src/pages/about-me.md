@@ -30,7 +30,7 @@ My background in technology and military service has shaped my approach to probl
 - Designing and implementing security protocols and compliance measures
 - Staying current with advanced IT technologies and military operations standards
 
-**Lorien Global - Field Implementation Specialist** *(May 2022 - Present)*
+**Lorien - Field Implementation Specialist** *(May 2022 - Present)*
 
 - Contracted to United Airlines at Newark Airport (Monday-Friday)
 - Conducting disaster recovery planning initiatives and site assessments

@@ -1,0 +1,188 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Heading from "../components/ui/Heading.astro";
+
+const pricingTiers = [
+  {
+    name: "Basic",
+    price: "$999",
+    description: "For small businesses getting started",
+    features: [
+      "Custom Website Design",
+      "Mobile Responsive",
+      "Contact Form",
+      "5 Content Pages",
+      "Basic SEO Setup",
+      "1 Month of Support"
+    ],
+    highlighted: false,
+    ctaText: "Get Started"
+  },
+  {
+    name: "Professional",
+    price: "$2,499",
+    description: "For growing businesses with specific needs",
+    features: [
+      "Everything in Basic",
+      "E-commerce Integration",
+      "Content Management System",
+      "10 Content Pages",
+      "Advanced SEO Package",
+      "Social Media Integration",
+      "3 Months of Support"
+    ],
+    highlighted: true,
+    ctaText: "Popular Choice"
+  },
+  {
+    name: "Enterprise",
+    price: "Custom",
+    description: "For larger businesses with complex requirements",
+    features: [
+      "Everything in Professional",
+      "Custom Web Application",
+      "Database Integration",
+      "API Development",
+      "User Authentication",
+      "Admin Dashboard",
+      "6 Months of Support",
+      "Priority Response"
+    ],
+    highlighted: false,
+    ctaText: "Contact Us"
+  }
+];
+
+const consultingServices = [
+  {
+    service: "Technology Assessment",
+    price: "$750",
+    description: "Comprehensive review of your current technology stack and recommendations for improvement."
+  },
+  {
+    service: "Digital Strategy Planning",
+    price: "$1,500",
+    description: "Complete digital roadmap development with implementation timeline and budget planning."
+  },
+  {
+    service: "Software Selection Guidance",
+    price: "$500",
+    description: "Expert advice on choosing the right software solutions for your specific business needs."
+  },
+  {
+    service: "Tech Support Package",
+    price: "$250/month",
+    description: "Ongoing technical support and maintenance for your digital assets."
+  }
+];
+---
+
+<Layout 
+  pageTitle="Pricing | TapfarTech"
+  description="Transparent pricing for our technology services. From web development to technical consulting, find the right solution for your business needs."
+  ogimage={{ url: "/images/pricing-og.webp", alt: "TapfarTech pricing and packages" }}
+>
+  <div class="relative mx-auto max-w-7xl px-8 max-sm:px-4 py-12">
+    <div class="mb-12 text-center">
+      <Heading textGradient="Our Pricing" level={1} />
+      <p class="text-lg text-gray-600 dark:text-gray-300 mt-4 max-w-3xl mx-auto">
+        Transparent pricing for quality technology solutions tailored to your business needs
+      </p>
+    </div>
+    
+    <section class="mb-20">
+      <h2 class="text-2xl font-semibold text-center mb-10 dark:text-white">Web Development Packages</h2>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        {pricingTiers.map(tier => (
+          <div class={`rounded-2xl overflow-hidden shadow-sm dark:shadow-gray-800/30 border border-neutral-100 dark:border-gray-700/30 ${tier.highlighted ? 'ring-2 ring-blue-500 dark:ring-blue-400 relative z-10' : ''}`} style={tier.highlighted ? 'transform: scale(1.05);' : ''}>
+            <div class={`p-6 ${tier.highlighted ? 'bg-blue-50 dark:bg-blue-900/20' : 'bg-white dark:bg-gray-800/50'}`}>
+              <h3 class="text-2xl font-bold mb-2 text-gray-800 dark:text-white">{tier.name}</h3>
+              <div class="mb-4">
+                <span class="text-4xl font-bold text-blue-600 dark:text-blue-400">{tier.price}</span>
+                {tier.name !== "Enterprise" && <span class="text-gray-500 dark:text-gray-400">/project</span>}
+              </div>
+              <p class="text-gray-600 dark:text-gray-300 mb-6">{tier.description}</p>
+              <button class={`w-full py-3 px-4 rounded-md font-medium transition-colors ${tier.highlighted ? 'bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700' : 'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600'}`}>
+                {tier.ctaText}
+              </button>
+            </div>
+            <div class="bg-gray-50 dark:bg-gray-800/30 p-6">
+              <ul class="space-y-3">
+                {tier.features.map(feature => (
+                  <li class="flex items-start">
+                    <svg class="h-6 w-6 text-green-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span class="text-gray-700 dark:text-gray-300">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="mb-20">
+      <h2 class="text-2xl font-semibold text-center mb-10 dark:text-white">Consulting Services</h2>
+      
+      <div class="overflow-hidden bg-white dark:bg-gray-800/50 rounded-2xl shadow-sm dark:shadow-gray-800/30 border border-neutral-100 dark:border-gray-700/30">
+        <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+          <thead class="bg-gray-50 dark:bg-gray-700">
+            <tr>
+              <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Service</th>
+              <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Price</th>
+              <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Description</th>
+            </tr>
+          </thead>
+          <tbody class="bg-white dark:bg-transparent divide-y divide-gray-200 dark:divide-gray-700">
+            {consultingServices.map(item => (
+              <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">{item.service}</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">{item.price}</td>
+                <td class="px-6 py-4 text-sm text-gray-500 dark:text-gray-300">{item.description}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="text-center mb-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl p-10 text-white shadow-lg">
+      <h2 class="text-2xl font-bold mb-6">Custom Project</h2>
+      <p class="text-lg mb-8 max-w-2xl mx-auto opacity-90">
+        Need something specific? We offer custom solutions tailored to your unique business requirements.
+      </p>
+      <a href="/contact" class="inline-block bg-white text-blue-600 hover:bg-blue-50 font-medium py-3 px-8 rounded-lg transition">
+        Request a Quote
+      </a>
+    </section>
+
+    <section class="bg-white dark:bg-gray-800/50 p-8 rounded-2xl max-w-3xl mx-auto shadow-sm dark:shadow-gray-800/30 border border-neutral-100 dark:border-gray-700/30">
+      <h2 class="text-2xl font-semibold mb-6 text-center text-gray-800 dark:text-white">Frequently Asked Questions</h2>
+      
+      <div class="space-y-6">
+        <div class="p-5 rounded-lg border border-gray-100 dark:border-gray-700">
+          <h3 class="text-lg font-medium text-blue-600 dark:text-blue-400 mb-2">How long does it take to complete a website?</h3>
+          <p class="text-gray-600 dark:text-gray-300">Most projects are completed within 4-8 weeks depending on complexity and content requirements.</p>
+        </div>
+        
+        <div class="p-5 rounded-lg border border-gray-100 dark:border-gray-700">
+          <h3 class="text-lg font-medium text-blue-600 dark:text-blue-400 mb-2">Do you offer ongoing maintenance?</h3>
+          <p class="text-gray-600 dark:text-gray-300">Yes, we offer monthly maintenance packages to keep your site secure, updated, and performing optimally.</p>
+        </div>
+        
+        <div class="p-5 rounded-lg border border-gray-100 dark:border-gray-700">
+          <h3 class="text-lg font-medium text-blue-600 dark:text-blue-400 mb-2">What payment methods do you accept?</h3>
+          <p class="text-gray-600 dark:text-gray-300">We accept credit cards, bank transfers, and PayPal. For larger projects, we typically require a 50% deposit upfront.</p>
+        </div>
+        
+        <div class="p-5 rounded-lg border border-gray-100 dark:border-gray-700">
+          <h3 class="text-lg font-medium text-blue-600 dark:text-blue-400 mb-2">Are there any hidden fees?</h3>
+          <p class="text-gray-600 dark:text-gray-300">No hidden fees. All costs are discussed and agreed upon before we begin work on your project.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>

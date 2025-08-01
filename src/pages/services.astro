@@ -1,0 +1,187 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Heading from "../components/ui/Heading.astro";
+---
+
+<Layout 
+  pageTitle="Services | TapfarTech"
+  description="Professional technology services including web development, software solutions, and IT consulting for businesses of all sizes."
+  ogimage={{ url: "/images/services-og.webp", alt: "TapfarTech professional services" }}
+>
+  <div class="relative mx-auto max-w-7xl px-8 max-sm:px-4 py-12">
+    <div class="mb-12 text-center">
+      <Heading textGradient="Our Services" level={1} />
+      <p class="text-lg text-gray-600 dark:text-gray-300 mt-4 max-w-3xl mx-auto">
+        Comprehensive technology solutions to help your business succeed in the digital landscape
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+      <div class="bg-white dark:bg-gray-800/50 rounded-2xl p-8 shadow-sm dark:shadow-gray-800/30 border border-neutral-100 dark:border-gray-700/30">
+        <div class="mb-4">
+          <span class="inline-block p-3 rounded-lg bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </span>
+        </div>
+        <h2 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Web Development & Design</h2>
+        <p class="mb-4 text-gray-600 dark:text-gray-300">We create modern, responsive websites and web applications tailored to your needs.</p>
+        
+        <ul class="space-y-3 my-6">
+          <li class="flex items-start">
+            <svg class="h-6 w-6 text-green-500 dark:text-green-400 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-700 dark:text-gray-300"><strong class="text-blue-600 dark:text-blue-400">Custom Websites</strong>: Clean, professional designs that reflect your brand</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="h-6 w-6 text-green-500 dark:text-green-400 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-700 dark:text-gray-300"><strong class="text-blue-600 dark:text-blue-400">WordPress Development</strong>: Custom themes, plugins and optimizations</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="h-6 w-6 text-green-500 dark:text-green-400 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-700 dark:text-gray-300"><strong class="text-blue-600 dark:text-blue-400">Landing Pages</strong>: High-converting single-page sites</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="h-6 w-6 text-green-500 dark:text-green-400 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-700 dark:text-gray-300"><strong class="text-blue-600 dark:text-blue-400">Portfolio Sites</strong>: Showcase your work with elegant solutions</span>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="bg-white dark:bg-gray-800/50 rounded-2xl p-8 shadow-sm dark:shadow-gray-800/30 border border-neutral-100 dark:border-gray-700/30">
+        <div class="mb-4">
+          <span class="inline-block p-3 rounded-lg bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+            </svg>
+          </span>
+        </div>
+        <h2 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Software Development</h2>
+        <p class="mb-4 text-gray-600 dark:text-gray-300">We deliver efficient software solutions for various business needs.</p>
+        
+        <ul class="space-y-3 my-6">
+          <li class="flex items-start">
+            <svg class="h-6 w-6 text-green-500 dark:text-green-400 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-700 dark:text-gray-300"><strong class="text-purple-600 dark:text-purple-400">Web Applications</strong>: Custom functionality for your business</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="h-6 w-6 text-green-500 dark:text-green-400 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-700 dark:text-gray-300"><strong class="text-purple-600 dark:text-purple-400">Database Solutions</strong>: Organize and optimize your data</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="h-6 w-6 text-green-500 dark:text-green-400 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-700 dark:text-gray-300"><strong class="text-purple-600 dark:text-purple-400">API Integration</strong>: Connect your systems with third-party services</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="h-6 w-6 text-green-500 dark:text-green-400 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-700 dark:text-gray-300"><strong class="text-purple-600 dark:text-purple-400">E-commerce Solutions</strong>: Sell your products with secure, user-friendly systems</span>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="bg-white dark:bg-gray-800/50 rounded-2xl p-8 shadow-sm dark:shadow-gray-800/30 border border-neutral-100 dark:border-gray-700/30">
+        <div class="mb-4">
+          <span class="inline-block p-3 rounded-lg bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </span>
+        </div>
+        <h2 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Tech Consultation & Support</h2>
+        <p class="mb-4 text-gray-600 dark:text-gray-300">Expert guidance for your technology challenges and opportunities.</p>
+        
+        <ul class="space-y-3 my-6">
+          <li class="flex items-start">
+            <svg class="h-6 w-6 text-green-500 dark:text-green-400 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-700 dark:text-gray-300"><strong class="text-green-600 dark:text-green-400">Technical Assessment</strong>: Evaluate your current systems</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="h-6 w-6 text-green-500 dark:text-green-400 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-700 dark:text-gray-300"><strong class="text-green-600 dark:text-green-400">Software Selection</strong>: Find the right tools for your needs</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="h-6 w-6 text-green-500 dark:text-green-400 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-700 dark:text-gray-300"><strong class="text-green-600 dark:text-green-400">Implementation Support</strong>: Smooth transition to new technologies</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="h-6 w-6 text-green-500 dark:text-green-400 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-700 dark:text-gray-300"><strong class="text-green-600 dark:text-green-400">Ongoing Maintenance</strong>: Keep your systems running optimally</span>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="bg-white dark:bg-gray-800/50 rounded-2xl p-8 shadow-sm dark:shadow-gray-800/30 border border-neutral-100 dark:border-gray-700/30">
+        <div class="mb-4">
+          <span class="inline-block p-3 rounded-lg bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </span>
+        </div>
+        <h2 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Business Technology</h2>
+        <p class="mb-4 text-gray-600 dark:text-gray-300">Strategic technology solutions to help your business grow.</p>
+        
+        <ul class="space-y-3 my-6">
+          <li class="flex items-start">
+            <svg class="h-6 w-6 text-green-500 dark:text-green-400 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-700 dark:text-gray-300"><strong class="text-amber-600 dark:text-amber-400">Business Process Automation</strong>: Streamline repetitive tasks</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="h-6 w-6 text-green-500 dark:text-green-400 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-700 dark:text-gray-300"><strong class="text-amber-600 dark:text-amber-400">Data Management</strong>: Organize and leverage your information assets</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="h-6 w-6 text-green-500 dark:text-green-400 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-700 dark:text-gray-300"><strong class="text-amber-600 dark:text-amber-400">Cloud Migration</strong>: Move your operations to secure, scalable platforms</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="h-6 w-6 text-green-500 dark:text-green-400 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-700 dark:text-gray-300"><strong class="text-amber-600 dark:text-amber-400">Technology Strategy</strong>: Plan your tech roadmap for sustainable growth</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl p-10 text-center text-white shadow-lg">
+      <h2 class="text-2xl font-bold mb-4">Ready to Transform Your Business?</h2>
+      <p class="text-lg mb-8 max-w-2xl mx-auto opacity-90">
+        Let's discuss how we can help you achieve your technology goals and set your business up for success.
+      </p>
+      <a href="/contact" class="inline-block bg-white text-blue-600 hover:bg-blue-50 font-medium py-3 px-8 rounded-lg transition duration-300">
+        Get in Touch
+      </a>
+    </div>
+  </div>
+</Layout>
