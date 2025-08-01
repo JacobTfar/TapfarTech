@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Heading from "../components/ui/Heading.astro";
+import PageHeader from "../components/layout/PageHeader.astro";
 ---
 
 <Layout 
@@ -8,13 +9,14 @@ import Heading from "../components/ui/Heading.astro";
   description="Professional technology services including web development, software solutions, and IT consulting for businesses of all sizes."
   ogimage={{ url: "/images/services-og.webp", alt: "TapfarTech professional services" }}
 >
-  <div class="relative mx-auto max-w-7xl px-8 max-sm:px-4 py-12">
-    <div class="mb-12 text-center">
-      <Heading textGradient="Our Services" level={1} />
-      <p class="text-lg text-gray-600 dark:text-gray-300 mt-4 max-w-3xl mx-auto">
-        Comprehensive technology solutions to help your business succeed in the digital landscape
-      </p>
-    </div>
+  <PageHeader 
+    title="Professional" 
+    titleGradient="Services" 
+    subtitle="Comprehensive technology solutions to help your business succeed in the digital landscape"
+    icon="briefcase"
+  />
+  
+  <div class="relative mx-auto max-w-7xl px-8 max-sm:px-4 py-8">
     
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
       <div class="bg-white dark:bg-gray-800/50 rounded-2xl p-8 shadow-sm dark:shadow-gray-800/30 border border-neutral-100 dark:border-gray-700/30">

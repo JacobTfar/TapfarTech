@@ -1,0 +1,38 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  title: string;
+  titleGradient?: string;
+  subtitle?: string;
+  icon?: string;
+}
+
+const { title, titleGradient, subtitle, icon = "info" } = Astro.props;
+---
+
+<div class="mx-auto max-w-7xl px-8 max-sm:px-4 pt-8 pb-4">
+  <div class="rounded-2xl bg-linear-to-r from-mint-300 dark:from-mint-600 to-mint-50 dark:to-mint-200/5 hover:to-mint-300/30 dark:hover:to-mint-600/30 p-[.2rem] transition-all">
+    <div class="group relative flex flex-col justify-center overflow-hidden rounded-2xl bg-linear-to-tr from-riptide-100 to-white p-8 dark:bg-linear-to-r dark:from-mint-950 dark:to-zinc-950 text-center dark:before:bg-[radial-gradient(circle,rgba(13,188,130)_0,rgba(1,45,34)_100%)] before:bg-[radial-gradient(circle,rgba(95,255,202)_0,rgba(144,253,210)_100%)] before:absolute before:left-1/2 before:top-1/2 before:h-[40%] before:aspect-square before:rounded-full before:blur-3xl before:opacity-30 before:-z-10 before:transition hover:before:animate-pulse">
+      <Icon 
+        class="text-4xl text-mint-500 dark:text-mint-400 mx-auto mb-4" 
+        name={icon} 
+        aria-hidden="true"
+      />
+      <h1 class="text-3xl font-bold mb-2 text-gray-800 dark:text-white">
+        {title}
+        {titleGradient && (
+          <span class="bg-linear-to-r from-riptide-500 to-mint-500 bg-clip-text font-black text-transparent dark:from-riptide-300 dark:to-mint-200">
+            {" " + titleGradient}
+          </span>
+        )}
+      </h1>
+      {subtitle && (
+        <p class="text-lg text-gray-600 dark:text-gray-300 mb-0 max-w-3xl mx-auto">
+          {subtitle}
+        </p>
+      )}
+      <slot />
+    </div>
+  </div>
+</div>

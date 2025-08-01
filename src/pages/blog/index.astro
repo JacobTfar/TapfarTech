@@ -3,6 +3,8 @@ import Layout from "../../layouts/Layout.astro";
 import Hero from "../../components/blog/Hero.astro";
 import Tags from "../../components/blog/Tags.astro";
 import ListPosts from "../../components/blog/ListPosts.astro";
+import PageHeader from "../../components/layout/PageHeader.astro";
+
 const pageTitle = "Web Development and Technology Blog | Jacob Tapfar | TapfarTech";
 const description = "Welcome to my blog, where I share my passion for frontend development, web design, and the latest technology trends.";
 const ogimage ={
@@ -11,11 +13,16 @@ const ogimage ={
 };
 ---
 
-<Layout  pageTitle={pageTitle} description={description} ogimage={ogimage}>
+<Layout pageTitle={pageTitle} description={description} ogimage={ogimage}>
+    <PageHeader 
+        title="My" 
+        titleGradient="Blog" 
+        subtitle="Thoughts, tutorials, and insights on web development, IT, and technology trends"
+        icon="md"
+    />
    
-    <Hero />
-    <Tags />
-    <div class="px-8 max-sm:px-4">
+    <div class="px-8 max-sm:px-4 py-8">
+        <Tags />
         <ListPosts />
     </div>
 

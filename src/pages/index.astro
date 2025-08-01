@@ -4,7 +4,9 @@ import Experience from "../components/portfolio/Experience.astro";
 import HeroIndex from "../components/portfolio/HeroIndex.astro";
 import Contact from "../components/portfolio/Contact.astro";
 import ListProjects from "../components/portfolio/ListProjects.astro";
+import Heading from "../components/ui/Heading.astro";
 import { getCollection } from "astro:content";
+import { Icon } from "astro-icon/components";
 
 const [staticData] = await getCollection("staticData");
 const { pageTitle, pageDescription, OGImage } = staticData.data;
@@ -16,7 +18,75 @@ const { pageTitle, pageDescription, OGImage } = staticData.data;
   ogimage={{ alt: OGImage.alt, url: OGImage.url }}
 >
   <HeroIndex />
+  
+  <!-- New Business Introduction -->
+  <section class="mx-auto max-w-7xl px-8 max-sm:px-4 py-8 mb-8">
+    <div class="rounded-2xl bg-linear-to-r from-mint-300 dark:from-mint-600 to-mint-50 dark:to-mint-200/5 hover:to-mint-300/30 dark:hover:to-mint-600/30 p-[.2rem] transition-all">
+      <div class="group relative flex flex-col justify-center overflow-hidden rounded-2xl bg-linear-to-tr from-riptide-100 to-white p-8 dark:bg-linear-to-r dark:from-mint-950 dark:to-zinc-950 text-center dark:before:bg-[radial-gradient(circle,rgba(13,188,130)_0,rgba(1,45,34)_100%)] before:bg-[radial-gradient(circle,rgba(95,255,202)_0,rgba(144,253,210)_100%)] before:absolute before:left-1/2 before:top-1/2 before:h-[40%] before:aspect-square before:rounded-full before:blur-3xl before:opacity-30 before:-z-10 before:transition hover:before:animate-pulse">
+        <Icon 
+          class="text-4xl text-mint-500 dark:text-mint-400 mx-auto mb-4" 
+          name="rocket" 
+          aria-hidden="true"
+        />
+        <h3 class="text-2xl font-bold mb-3 text-gray-800 dark:text-white">Welcome to TapfarTech</h3>
+        <p class="text-lg text-gray-600 dark:text-gray-300 mb-4 max-w-3xl mx-auto">
+          As a new technology business, I'm bringing fresh ideas, personalized attention, and a commitment to excellence to every project. With my background in military IT and commercial systems administration, I deliver professional technology solutions tailored to your needs.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4 mt-4">
+          <div class="bg-white/70 dark:bg-gray-800/50 px-4 py-2 rounded-full shadow-sm">
+            <span class="bg-linear-to-r from-riptide-500 to-mint-500 bg-clip-text font-bold text-transparent dark:from-riptide-300 dark:to-mint-200">Web Development</span>
+          </div>
+          <div class="bg-white/70 dark:bg-gray-800/50 px-4 py-2 rounded-full shadow-sm">
+            <span class="bg-linear-to-r from-riptide-500 to-mint-500 bg-clip-text font-bold text-transparent dark:from-riptide-300 dark:to-mint-200">IT Consulting</span>
+          </div>
+          <div class="bg-white/70 dark:bg-gray-800/50 px-4 py-2 rounded-full shadow-sm">
+            <span class="bg-linear-to-r from-riptide-500 to-mint-500 bg-clip-text font-bold text-transparent dark:from-riptide-300 dark:to-mint-200">Systems Administration</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
   <Experience />
   <ListProjects />
+  
+  <!-- Call to Action Section -->
+  <section class="mx-auto max-w-7xl px-8 max-sm:px-4 mb-12">
+    <div class="rounded-2xl bg-linear-to-r from-mint-300 dark:from-mint-600 to-mint-50 dark:to-mint-200/5 hover:to-mint-300/30 dark:hover:to-mint-600/30 p-[.2rem] transition-all">
+      <div class="relative overflow-hidden rounded-2xl bg-linear-to-tr from-riptide-100 to-white dark:bg-linear-to-r dark:from-mint-950 dark:to-zinc-950 dark:before:bg-[radial-gradient(circle,rgba(13,188,130)_0,rgba(1,45,34)_100%)] before:bg-[radial-gradient(circle,rgba(95,255,202)_0,rgba(144,253,210)_100%)] before:absolute before:right-0 before:bottom-0 before:h-[60%] before:w-[60%] before:rounded-full before:blur-3xl before:opacity-30 before:-z-10 before:transition">
+        <div class="grid grid-cols-1 md:grid-cols-5 items-center">
+          <div class="md:col-span-3 p-8 z-10">
+            <h2 class="text-3xl font-bold mb-4 text-gray-800 dark:text-white">Let's Build Your Digital Presence</h2>
+            <p class="text-lg mb-6 text-gray-700 dark:text-gray-300">
+              Ready to elevate your business with professional web solutions? Let's discuss how my expertise can help your business succeed online.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+              <div class="bg-white/70 dark:bg-gray-800/50 p-4 rounded-lg shadow-sm">
+                <div class="flex items-center mb-2">
+                  <Icon class="h-5 w-5 text-mint-500 dark:text-mint-400 mr-2" name="code" />
+                  <span class="text-gray-800 dark:text-white font-medium">Affordable Solutions</span>
+                </div>
+                <p class="text-gray-600 dark:text-gray-400 ml-7">Transparent pricing with clear deliverables</p>
+              </div>
+              <div class="bg-white/70 dark:bg-gray-800/50 p-4 rounded-lg shadow-sm">
+                <div class="flex items-center mb-2">
+                  <Icon class="h-5 w-5 text-mint-500 dark:text-mint-400 mr-2" name="rocket" />
+                  <span class="text-gray-800 dark:text-white font-medium">Quick Turnaround</span>
+                </div>
+                <p class="text-gray-600 dark:text-gray-400 ml-7">Get your site up and running fast</p>
+              </div>
+            </div>
+            <a href="/services" class="inline-block bg-mint-500 hover:bg-mint-600 text-white dark:bg-mint-600 dark:hover:bg-mint-500 font-medium py-3 px-6 rounded-lg transition-colors shadow-sm">
+              View Services
+            </a>
+          </div>
+          <div class="md:col-span-2 p-8 hidden md:block relative z-10">
+            <img src="/images/portfolio.webp" alt="Modern website design preview" class="rounded-lg shadow-lg transform rotate-2 hover:rotate-0 transition-transform duration-300" width="400" height="280">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
   <Contact />
 </Layout>

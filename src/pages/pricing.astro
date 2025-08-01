@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Heading from "../components/ui/Heading.astro";
+import PageHeader from "../components/layout/PageHeader.astro";
 
 const pricingTiers = [
   {
@@ -81,13 +82,14 @@ const consultingServices = [
   description="Transparent pricing for my technology services. From web development to technical consulting, find the right solution for your business needs."
   ogimage={{ url: "/images/pricing-og.webp", alt: "TapfarTech pricing and packages" }}
 >
-  <div class="relative mx-auto max-w-7xl px-8 max-sm:px-4 py-12">
-    <div class="mb-12 text-center">
-      <Heading textGradient="My Pricing" level={1} />
-      <p class="text-lg text-gray-600 dark:text-gray-300 mt-4 max-w-3xl mx-auto">
-        Transparent pricing for quality technology solutions tailored to your business needs
-      </p>
-    </div>
+  <PageHeader 
+    title="My" 
+    titleGradient="Pricing" 
+    subtitle="Transparent pricing for quality technology solutions tailored to your business needs"
+    icon="dashboard"
+  />
+  
+  <div class="relative mx-auto max-w-7xl px-8 max-sm:px-4 py-8">
     
     <section class="mb-20">
       <h2 class="text-2xl font-semibold text-center mb-10 dark:text-white">Web Development Packages</h2>
