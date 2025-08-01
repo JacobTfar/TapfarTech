@@ -1,4 +1,13 @@
-# Our Services
+---
+layout: ../layouts/MarkdownPostLayout.astro
+title: TapfarTech Services List
+description: A comprehensive list of services offered by TapfarTech
+image: { url: "/images/services-og.webp", alt: "TapfarTech Services" }
+pubDate: 2025-07-31
+author: Jacob Tapfar
+tags: ["services", "web-development", "software", "consulting"]
+languages: ["html", "css", "javascript"]
+---
 
 ## Web Development & Design
 
@@ -39,3 +48,5 @@ Strategic technology solutions to help your business grow.
 ## Contact Us
 
 Ready to discuss your project? [Email us](mailto:info@tapfartech.com) to schedule a consultation about how we can help your business succeed.
+
+<!-- Rename this file to services-content.md or move it to another location -->
