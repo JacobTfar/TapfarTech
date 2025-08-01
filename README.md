@@ -5,12 +5,12 @@
 
 ## 🎯 Overview
 
-**TapfarTech** is a cutting-edge technology company website built with the NeonMint template. This modern and minimalist design showcases our technology solutions, services, and expertise in web development, cloud infrastructure, and digital transformation.
+**TapfarTech** is a cutting-edge technology company website built with Astro. This modern and minimalist design showcases our technology solutions, services, and expertise in web development, cloud infrastructure, and digital transformation.
 
 ## 📁 Project Structure
 
 ```bash
-└── 📁NeonMint
+└── 📁TapfarTech
     └── 📁public
         ├── android-chrome-192x192.png
         ├── android-chrome-512x512.png
@@ -100,14 +100,14 @@
 
    ### 🚀**Astro Installation**
    ```bash
-   npm create astro@latest -- --template EFEELE/neonmint
+   npm create astro@latest -- --template JacobTfar/TapfarTech
    ```
    or
    ### 🔧**Manual Installation**
    
    #### Clone Repository
    ```bash
-   git clone https://github.com/EFEELE/NeonMint.git
+   git clone https://github.com/JacobTfar/TapfarTech.git
    ```
    #### Install Dependencies
    ```bash
