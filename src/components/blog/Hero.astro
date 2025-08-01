@@ -24,32 +24,49 @@ const {
     class="grid md:grid-cols-4 md:grid-rows-2 gap-4 max-sm:gap-3 grid-cols-2 grid-rows-4 max-w-7xl mx-auto max-md:h-[80vh] max-sm:h-auto max-sm:grid-rows-[auto_200px_auto_auto] max-xl:h-[550px] xl:h-[700px]"
   >
     <div
-      class="p-8 max-md:gap-0 max-xl:p-5 h-full max-md:p-4 max-lg:gap-1 gap-3 flex flex-col border border-emerald-50 rounded-2xl dark:bg-zinc-800 bg-linear-to-r from-riptide-200 to-mint-200 dark:from-riptide-500 dark:to-mint-500 dark:border-zinc-800 dark:border-2 dark:bg-gradient-radial md:col-start-4 col-start-2 row-start-2"
+      class="group hover:shadow-sm dark:hover:shadow-gray-800/30 transition-all duration-300 p-8 max-md:gap-0 max-xl:p-5 h-full max-md:p-4 max-lg:gap-1 gap-3 flex flex-col bg-white dark:bg-gray-800/50 border border-neutral-100 dark:border-gray-700/30 rounded-2xl shadow-sm dark:shadow-gray-800/30 md:col-start-4 col-start-2 row-start-2 relative overflow-hidden"
     >
-      <Heading text={techsTitle} textGradient="" level={3} />
+      <div class="absolute -bottom-10 -right-10 opacity-5 group-hover:opacity-10 transition-opacity duration-300">
+        <Icon name="code" class="w-40 h-40 text-mint-500 dark:text-mint-400/40" />
+      </div>
+      
+      <div class="flex items-center gap-2 mb-1">
+        <Heading text={techsTitle} textGradient="from-blue-600 to-mint-500 dark:from-blue-400 dark:to-mint-400" level={3} />
+        <span class="text-xs text-mint-600 dark:text-mint-300 font-medium bg-mint-100 dark:bg-mint-800/50 px-2 py-0.5 rounded-full">Expert</span>
+      </div>
+      
+      <p class="text-sm text-gray-600 dark:text-gray-300 mb-3">Modern stack for powerful, responsive websites</p>
 
-      <div class="overflow-y-auto">
+      <div class="overflow-y-auto relative z-10">
         <Languages />
       </div>
     </div>
 
     <div
-      class="group hover:shadow-[0_20px_50px_rgba(13,188,130,0.4)] hover:scale-105 z-40 rounded-2xl transition-all ease-in duration-150 col-start-1 row-start-2 md:col-start-3 bg-linear-to-r from-mint-300 dark:from-mint-600 to-mint-50 dark:to-mint-200/5 hover:to-mint-300/30 dark:hover:to-mint-600/30 p-[.2rem]"
+      class="group hover:shadow-sm dark:hover:shadow-gray-800/30 transition-all duration-300 z-40 col-start-1 row-start-2 md:col-start-3 relative rounded-2xl overflow-hidden"
     >
-      <div class="w-full h-full overflow-hidden rounded-2xl dark:bg-zinc-900">
+      <div class="w-full h-full bg-white dark:bg-gray-800/50 shadow-sm dark:shadow-gray-800/30 border border-neutral-100 dark:border-gray-700/30 rounded-2xl">
         <div
-          class="w-full h-full relative overflow-hidden rounded-2xl bg-linear-to-tr from-riptide-100 to-white dark:from-transparent dark:bg-linear-to-bl dark:to-transparent"
+          class="w-full h-full relative overflow-hidden rounded-2xl"
         >
           <a target="_blank" href={github}>
             <div
-              class="p-8 h-full relative max-xl:p-5 max-md:p-4 flex flex-col gap-8 dark:before:bg-[radial-gradient(circle,rgba(13,188,130)_0,rgba(1,45,34)_100%)] before:bg-[radial-gradient(circle,rgba(95,255,202)_0,rgba(144,253,210)_100%)] before:h-[30%] before:absolute before:aspect-square xl:before:bottom-10 before:left-30 before:bottom-30 before:rounded-full before:blur-3xl before:opacity-90 before:transition before:z-0"
+              class="p-8 h-full relative max-xl:p-5 max-md:p-4 flex flex-col gap-8"
             >
-              <div class="z-2">
-                <Heading text={githubText} textGradient="" level={3} />
+              <div class="mb-4">
+                <span class="inline-block p-3 rounded-lg bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400">
+                  <Icon name="github-svg" class="h-6 w-6" />
+                </span>
               </div>
+              
+              <div class="z-2">
+                <Heading text={githubText} level={3} className="text-gray-800 dark:text-white" />
+              </div>
+              
+              <p class="text-gray-600 dark:text-gray-300">Explore open-source projects and code samples.</p>
 
               <Icon
-                class="group-hover:animate-pulse ease-in-out size-50 absolute -bottom-10 xl:size-56 xl:-bottom-5 left-30 max-sm:left-10 max-md:left-30 xl:-right-24 text-mint-500/30"
+                class="group-hover:animate-pulse ease-in-out size-40 absolute opacity-5 -bottom-5 -right-5 text-purple-500"
                 name="github"
               />
             </div>
@@ -59,50 +76,47 @@ const {
     </div>
 
     <div
-      class="flex col-span-2 col-start-1 row-start-1 md:col-start-3 bg-linear-to-r rounded-2xl from-mint-300 dark:from-mint-600 to-mint-50 dark:to-mint-200/5 hover:to-mint-300/30 dark:hover:to-mint-600/30 p-[.2rem]"
+      class="col-span-2 col-start-1 row-start-1 md:col-start-3 rounded-2xl overflow-hidden"
     >
       <article
-        class="group hover:shadow-[0_10px_50px_rgba(13,188,130,0.2)] w-full h-full overflow-hidden p-4 max-md:p-4 gap-4 max-md:gap-1 max-lg:gap-0 rounded-2xl bg-linear-to-tr from-riptide-100 to-mint-50 flex dark:bg-linear-to-r z-0 dark:overflow-hidden relative dark:from-mint-900 dark:to-mint-950 dark:before:bg-[radial-gradient(circle,rgba(13,188,130)_0,rgba(1,45,34)_100%)] before:bg-[radial-gradient(circle,rgba(95,255,202)_0,rgba(144,253,210)_100%)] dark:before:h-[80%] before:h-[30%] before:absolute before:aspect-square dark:before:left-30 before:left-50 dark:before:-bottom-0 before:bottom-40 before:rounded-full dark:before:blur-3xl before:blur-2xl dark:before:opacity-80 before:opacity-100 before:-z-10 before:transition"
+        class="group hover:shadow-sm dark:hover:shadow-gray-800/30 transition-all duration-300 w-full h-full overflow-hidden p-4 max-md:p-4 gap-4 max-md:gap-1 max-lg:gap-0 rounded-2xl bg-white dark:bg-gray-800/50 flex shadow-sm dark:shadow-gray-800/30 border border-neutral-100 dark:border-gray-700/30 relative"
       >
         <div
-          class="group-hover:scale-103 ease-in-out duration-500 w-5/12 max-sm:w-auto flex justify-center items-center"
+          class="group-hover:scale-[1.02] transition-transform duration-500 w-5/12 max-sm:w-auto flex justify-center items-center"
         >
           <div
             aria-label={profileAlt}
-            class="h-full w-full max-sm:rounded-full rounded-2xl max-sm:size-20 bg-center bg-cover overflow-hidden"
+            class="h-full w-full max-sm:rounded-full rounded-2xl max-sm:size-20 flex justify-center items-center bg-gradient-to-br from-mint-400/20 to-blue-500/20 dark:from-mint-800/30 dark:to-blue-800/30 overflow-hidden shadow-md"
           >
-            <img 
-              src={profileImage} 
-              alt={profileAlt}
-              class="w-full h-full object-cover max-sm:rounded-full rounded-2xl"
-            />
+            <div class="logo text-2xl text-mint-500 dark:text-mint-400 text-center relative before:absolute before:left-1/2 before:top-1/2 before:h-full before:w-[40%] before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-full before:bg-[#50fd8f25] before:blur-3xl before:opacity-80 before:-z-1">TapfarTech</div>
             <a href={profileLink} class="h-full w-full absolute inset-0 flex"></a>
           </div>
         </div>
         <div
           class="p-4 w-7/12 flex flex-col justify-center gap-4 max-sm:w-fit max-md:gap-2"
         >
-          <span
-            class="font-extrabold text-lg max-xl:text-base max-lg:text-sm max-lg:flex max-lg:flex-col-reverse max-md:flex-row leading-normal max-sm:leading-none"
-            ><b
-              class="bg-linear-to-r from-riptide-400 to-mint-400 dark:from-riptide-200 dark:to-mint-400 text-transparent bg-clip-text"
-              >{profileTitle}</b
-            > 🚀</span
-          >
-          <Heading text={profileName} level={3} />
+          <div class="mb-1">
+            <span class="inline-block px-3 py-1 rounded-full bg-mint-100 dark:bg-mint-900/30 text-mint-600 dark:text-mint-400 text-sm font-medium">
+              Professional Web Development
+            </span>
+          </div>
+          <div class="logo text-2xl text-gray-800 dark:text-white">TapfarTech</div>
+          <p class="text-gray-600 dark:text-gray-300 mb-4 text-sm">Modern web development solutions with cutting-edge technologies</p>
           <Button
             link={profileLink}
-            text="About Me"
-            iconName="person"
-            class="drop-shadow-xl"
+            text="About TapfarTech"
+            iconName="info"
+            class="inline-block bg-mint-500 hover:bg-mint-600 text-white font-medium py-2 px-4 rounded-lg transition"
           />
         </div>
       </article>
     </div>
     <div
-      class="col-span-2 row-span-2 md:col-start-1 md:row-start-1 bg-conic/[from_var(--border-angle)] dark:from-mint-200/30 dark:via-mint-500 dark:to-mint-200/20 from-mint-300/30 via-mint-500 to-mint-300/20 from-20% to-80% animate-rotate-border rounded-2xl p-[.2rem]"
+      class="col-span-2 row-span-2 md:col-start-1 md:row-start-1 rounded-2xl bg-white dark:bg-gray-800/50 shadow-sm dark:shadow-gray-800/30 border border-neutral-100 dark:border-gray-700/30 overflow-hidden"
     >
-      <LastPost />
+      <div class="p-2 h-full">
+        <LastPost />
+      </div>
     </div>
   </div>
 </section>

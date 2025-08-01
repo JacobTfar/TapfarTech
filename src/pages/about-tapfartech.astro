@@ -1,0 +1,361 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Heading from "../components/ui/Heading.astro";
+import PageHeader from "../components/layout/PageHeader.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<Layout 
+  pageTitle="About TapfarTech | Modern Web Development"
+  description="Learn more about TapfarTech's mission, services, and expertise in web development and digital solutions."
+  ogimage={{ url: "", alt: "TapfarTech" }}
+>
+  <PageHeader 
+    title="About" 
+    titleGradient="TapfarTech" 
+    subtitle="Creating exceptional digital experiences that empower businesses to thrive"
+    icon="info"
+  />
+  
+  <div class="relative mx-auto max-w-7xl px-8 max-sm:px-4 py-8">
+    
+    <!-- Mission Section -->
+    <div class="mb-16">
+      <div class="bg-white dark:bg-gray-800/50 rounded-2xl p-8 shadow-sm dark:shadow-gray-800/30 border border-neutral-100 dark:border-gray-700/30">
+        <div class="mb-6">
+          <span class="inline-block p-3 rounded-lg bg-mint-100 dark:bg-mint-900/30 text-mint-600 dark:text-mint-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </span>
+        </div>
+        <h2 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Our Mission</h2>
+        <p class="text-gray-600 dark:text-gray-300 text-lg">
+          At TapfarTech, we're dedicated to creating exceptional digital experiences that empower businesses to thrive in the digital landscape. We combine technical expertise with creative problem-solving to deliver websites and applications that not only look stunning but also perform flawlessly.
+        </p>
+      </div>
+    </div>
+
+    <!-- What Sets Us Apart Section -->
+    <div class="bg-gradient-to-r from-mint-500 to-blue-600 rounded-2xl p-8 text-white shadow-lg mb-16">
+      <div class="flex flex-col md:flex-row gap-6 items-center">
+        <div class="md:w-1/4 flex justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 opacity-80" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+          </svg>
+        </div>
+        <div class="md:w-3/4">
+          <h2 class="text-2xl font-bold mb-4">What Sets Us Apart</h2>
+          <p class="text-lg opacity-90 mb-4">
+            Our approach combines technical excellence with a deep understanding of business needs. We don't just build websites—we create digital solutions that drive real results for your business.
+          </p>
+          <div class="grid grid-cols-2 gap-4 mt-6">
+            <div class="flex items-center gap-2">
+              <svg class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="font-medium">Performance-Focused</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="font-medium">Business-Centric</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="font-medium">Technology Experts</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="font-medium">Clear Communication</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- What We Do Section -->
+    <div class="mb-8">
+      <div class="mb-8">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="p-3 rounded-lg bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <h2 class="text-2xl font-semibold text-gray-800 dark:text-white">What We Do</h2>
+        </div>
+
+        <p class="text-gray-600 dark:text-gray-300 text-lg mb-8">
+          TapfarTech specializes in modern web development using cutting-edge technologies and frameworks. Our core services include:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white dark:bg-gray-800/50 rounded-2xl p-8 shadow-sm dark:shadow-gray-800/30 border border-neutral-100 dark:border-gray-700/30">
+          <div class="mb-4">
+            <span class="inline-block p-3 rounded-lg bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </span>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-gray-800 dark:text-white">Custom Website Development</h3>
+          <p class="mb-4 text-gray-600 dark:text-gray-300">Tailored solutions that perfectly match your brand and business needs.</p>
+          
+          <ul class="space-y-3 my-6">
+            <li class="flex items-start">
+              <svg class="h-6 w-6 text-green-500 dark:text-green-400 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-700 dark:text-gray-300">Responsive designs for all devices</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="h-6 w-6 text-green-500 dark:text-green-400 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-700 dark:text-gray-300">Modern, clean code architecture</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="h-6 w-6 text-green-500 dark:text-green-400 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-700 dark:text-gray-300">SEO optimization built-in</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="bg-white dark:bg-gray-800/50 rounded-2xl p-8 shadow-sm dark:shadow-gray-800/30 border border-neutral-100 dark:border-gray-700/30">
+          <div class="mb-4">
+            <span class="inline-block p-3 rounded-lg bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+              </svg>
+            </span>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-gray-800 dark:text-white">Web Application Development</h3>
+          <p class="mb-4 text-gray-600 dark:text-gray-300">Feature-rich, responsive applications that solve complex business challenges.</p>
+          
+          <ul class="space-y-3 my-6">
+            <li class="flex items-start">
+              <svg class="h-6 w-6 text-green-500 dark:text-green-400 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-700 dark:text-gray-300">Secure authentication systems</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="h-6 w-6 text-green-500 dark:text-green-400 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-700 dark:text-gray-300">Database integration & management</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="h-6 w-6 text-green-500 dark:text-green-400 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-700 dark:text-gray-300">Custom API development</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="bg-white dark:bg-gray-800/50 rounded-2xl p-8 shadow-sm dark:shadow-gray-800/30 border border-neutral-100 dark:border-gray-700/30">
+          <div class="mb-4">
+            <span class="inline-block p-3 rounded-lg bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+              </svg>
+            </span>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-gray-800 dark:text-white">UI/UX Design</h3>
+          <p class="mb-4 text-gray-600 dark:text-gray-300">User-centered design that enhances engagement and conversion.</p>
+          
+          <ul class="space-y-3 my-6">
+            <li class="flex items-start">
+              <svg class="h-6 w-6 text-green-500 dark:text-green-400 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-700 dark:text-gray-300">Intuitive user interfaces</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="h-6 w-6 text-green-500 dark:text-green-400 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-700 dark:text-gray-300">User flow optimization</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="h-6 w-6 text-green-500 dark:text-green-400 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-700 dark:text-gray-300">Conversion-focused design</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="bg-white dark:bg-gray-800/50 rounded-2xl p-8 shadow-sm dark:shadow-gray-800/30 border border-neutral-100 dark:border-gray-700/30">
+          <div class="mb-4">
+            <span class="inline-block p-3 rounded-lg bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </span>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-gray-800 dark:text-white">Performance Optimization</h3>
+          <p class="mb-4 text-gray-600 dark:text-gray-300">Ensuring your digital platforms load fast and run smoothly.</p>
+          
+          <ul class="space-y-3 my-6">
+            <li class="flex items-start">
+              <svg class="h-6 w-6 text-green-500 dark:text-green-400 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-700 dark:text-gray-300">Core Web Vitals improvement</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="h-6 w-6 text-green-500 dark:text-green-400 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-700 dark:text-gray-300">Image and asset optimization</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="h-6 w-6 text-green-500 dark:text-green-400 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-700 dark:text-gray-300">Caching strategies implementation</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Technology Stack Section -->
+    <div class="my-16">
+      <div class="flex items-center gap-3 mb-8">
+        <div class="p-3 rounded-lg bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+          </svg>
+        </div>
+        <h2 class="text-2xl font-semibold text-gray-800 dark:text-white">Our Technology Stack</h2>
+      </div>
+
+      <p class="text-gray-600 dark:text-gray-300 text-lg mb-8">
+        We stay at the forefront of web development by leveraging the most powerful and efficient technologies:
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+        <div class="bg-white dark:bg-gray-800/50 rounded-xl p-6 shadow-sm dark:shadow-gray-800/30 border border-neutral-100 dark:border-gray-700/30 text-center">
+          <h4 class="font-bold text-blue-600 dark:text-blue-400 mb-3">Frontend</h4>
+          <p class="text-gray-600 dark:text-gray-300">React, Astro, Next.js, TypeScript</p>
+        </div>
+        
+        <div class="bg-white dark:bg-gray-800/50 rounded-xl p-6 shadow-sm dark:shadow-gray-800/30 border border-neutral-100 dark:border-gray-700/30 text-center">
+          <h4 class="font-bold text-pink-600 dark:text-pink-400 mb-3">Styling</h4>
+          <p class="text-gray-600 dark:text-gray-300">Tailwind CSS, SASS</p>
+        </div>
+        
+        <div class="bg-white dark:bg-gray-800/50 rounded-xl p-6 shadow-sm dark:shadow-gray-800/30 border border-neutral-100 dark:border-gray-700/30 text-center">
+          <h4 class="font-bold text-green-600 dark:text-green-400 mb-3">Backend</h4>
+          <p class="text-gray-600 dark:text-gray-300">Node.js, Python</p>
+        </div>
+        
+        <div class="bg-white dark:bg-gray-800/50 rounded-xl p-6 shadow-sm dark:shadow-gray-800/30 border border-neutral-100 dark:border-gray-700/30 text-center">
+          <h4 class="font-bold text-amber-600 dark:text-amber-400 mb-3">Databases</h4>
+          <p class="text-gray-600 dark:text-gray-300">MongoDB, MySQL</p>
+        </div>
+        
+        <div class="bg-white dark:bg-gray-800/50 rounded-xl p-6 shadow-sm dark:shadow-gray-800/30 border border-neutral-100 dark:border-gray-700/30 text-center">
+          <h4 class="font-bold text-purple-600 dark:text-purple-400 mb-3">Deployment</h4>
+          <p class="text-gray-600 dark:text-gray-300">Vercel, Netlify, AWS, Cloudflare</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Why Choose TapfarTech Section -->
+    <div class="my-16">
+      <div class="flex items-center gap-3 mb-8">
+        <div class="p-3 rounded-lg bg-mint-100 dark:bg-mint-900/30 text-mint-600 dark:text-mint-400">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+          </svg>
+        </div>
+        <h2 class="text-2xl font-semibold text-gray-800 dark:text-white">Why Choose TapfarTech?</h2>
+      </div>
+
+      <div class="grid md:grid-cols-5 gap-6">
+        <div class="bg-white dark:bg-gray-800/50 rounded-xl p-6 shadow-sm dark:shadow-gray-800/30 border border-neutral-100 dark:border-gray-700/30">
+          <h4 class="font-bold text-mint-600 dark:text-mint-400 mb-3">Expertise</h4>
+          <p class="text-gray-600 dark:text-gray-300">Years of experience in building high-performance web solutions</p>
+        </div>
+        
+        <div class="bg-white dark:bg-gray-800/50 rounded-xl p-6 shadow-sm dark:shadow-gray-800/30 border border-neutral-100 dark:border-gray-700/30">
+          <h4 class="font-bold text-mint-600 dark:text-mint-400 mb-3">Innovation</h4>
+          <p class="text-gray-600 dark:text-gray-300">Always exploring new technologies to provide the best solutions</p>
+        </div>
+        
+        <div class="bg-white dark:bg-gray-800/50 rounded-xl p-6 shadow-sm dark:shadow-gray-800/30 border border-neutral-100 dark:border-gray-700/30">
+          <h4 class="font-bold text-mint-600 dark:text-mint-400 mb-3">Quality</h4>
+          <p class="text-gray-600 dark:text-gray-300">Meticulous attention to detail in every project</p>
+        </div>
+        
+        <div class="bg-white dark:bg-gray-800/50 rounded-xl p-6 shadow-sm dark:shadow-gray-800/30 border border-neutral-100 dark:border-gray-700/30">
+          <h4 class="font-bold text-mint-600 dark:text-mint-400 mb-3">Support</h4>
+          <p class="text-gray-600 dark:text-gray-300">Ongoing maintenance and support after launch</p>
+        </div>
+        
+        <div class="bg-white dark:bg-gray-800/50 rounded-xl p-6 shadow-sm dark:shadow-gray-800/30 border border-neutral-100 dark:border-gray-700/30">
+          <h4 class="font-bold text-mint-600 dark:text-mint-400 mb-3">Results</h4>
+          <p class="text-gray-600 dark:text-gray-300">Focused on delivering solutions that drive real business value</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Development Process Section -->
+    <div class="my-16">
+      <div class="flex items-center gap-3 mb-8">
+        <div class="p-3 rounded-lg bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+          </svg>
+        </div>
+        <h2 class="text-2xl font-semibold text-gray-800 dark:text-white">Our Development Process</h2>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="bg-white dark:bg-gray-800/50 rounded-xl p-6 shadow-sm dark:shadow-gray-800/30 border border-neutral-100 dark:border-gray-700/30">
+          <h4 class="font-bold text-mint-600 dark:text-mint-400 mb-3">1. Discovery</h4>
+          <p class="text-gray-600 dark:text-gray-300">We start by understanding your business goals, target audience, and technical requirements.</p>
+        </div>
+        
+        <div class="bg-white dark:bg-gray-800/50 rounded-xl p-6 shadow-sm dark:shadow-gray-800/30 border border-neutral-100 dark:border-gray-700/30">
+          <h4 class="font-bold text-mint-600 dark:text-mint-400 mb-3">2. Planning</h4>
+          <p class="text-gray-600 dark:text-gray-300">We create a detailed project plan with timelines, milestones, and technical specifications.</p>
+        </div>
+        
+        <div class="bg-white dark:bg-gray-800/50 rounded-xl p-6 shadow-sm dark:shadow-gray-800/30 border border-neutral-100 dark:border-gray-700/30">
+          <h4 class="font-bold text-mint-600 dark:text-mint-400 mb-3">3. Development</h4>
+          <p class="text-gray-600 dark:text-gray-300">Our team builds your solution using modern technologies and best practices.</p>
+        </div>
+        
+        <div class="bg-white dark:bg-gray-800/50 rounded-xl p-6 shadow-sm dark:shadow-gray-800/30 border border-neutral-100 dark:border-gray-700/30">
+          <h4 class="font-bold text-mint-600 dark:text-mint-400 mb-3">4. Launch & Support</h4>
+          <p class="text-gray-600 dark:text-gray-300">We deploy your project and provide ongoing maintenance and optimization.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="text-center bg-gradient-to-r from-mint-500 to-blue-600 rounded-2xl p-10 text-white shadow-lg my-16">
+      <h3 class="text-2xl font-bold mb-6">Ready to Transform Your Digital Presence?</h3>
+      <p class="text-lg max-w-2xl mx-auto opacity-90 mb-6">
+        Let us help you build a modern, high-performance web solution that drives real business results.
+      </p>
+      <a href="/services" class="inline-block bg-white text-mint-600 hover:bg-mint-50 font-medium py-3 px-8 rounded-lg transition">
+        Explore Our Services
+      </a>
+    </div>
+  </div>
+</Layout>

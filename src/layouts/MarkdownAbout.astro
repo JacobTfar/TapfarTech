@@ -23,72 +23,56 @@ const { frontmatter } = Astro.props;
 >
   <PageHeader 
     title="About" 
-    titleGradient="Me" 
-    icon="person"
+    titleGradient="TapfarTech" 
+    icon="code"
   />
   <section
     class="w-full px-8 max-sm:px-4 py-4 flex flex-row justify-center gap-6"
   >
     <div class="w-64 max-xl:hidden"></div>
 
-    <article
-      class="flex flex-col gap-8 max-w-3xl max-md:w-full pb-10 pt-8 mt-8 max-sm:mt-0 px-14 max-md:px-10 max-sm:px-6 dark:bg-transparent bg-white dark:border-0 border border-neutral-100 rounded-2xl"
-    >
-      <div class="w-full h-auto mb-4 mx-auto" id="#">
-        <div
-          class="transition-all justify-center w-full gap-8 max-md:gap-3 max-lg:gap-2 flex flex-col items-center z-0 relative dark:from-mint-950 dark:to-zinc-950"
-        >
-          <div class="aspect-square h-60 max-md:size-32">
-            <div
-              class="group-hover:scale-105 relative z-10 flex w-full cursor-pointer items-center overflow-hidden rounded-full dark:p-[1.5px] p-[2px] transition-all duration-500"
-            >
-              <div
-                class="absolute inset-0 h-full w-full rounded-full from-transparent to-riptide-500 dark:from-transparent f dark:to-mint-300 animate-rotate-border bg-conic/[from_var(--border-angle)]"
-              >
-              </div>
-              <div class="relative z-20 flex w-full rounded-full bg-mint-900">
-                <div
-                  class="w-full aspect-square rounded-full overflow-hidden bg-center bg-cover"
-                >
+    <article class="max-w-3xl max-md:w-full pt-8 mt-4 max-sm:mt-0">
+      <div class="bg-white dark:bg-gray-800/50 p-8 rounded-2xl shadow-sm dark:shadow-gray-800/30 border border-neutral-100 dark:border-gray-700/30 mb-8">
+        <div class="flex flex-col md:flex-row items-center gap-8 mb-8">
+          <div class="md:w-1/3">
+            <div class="aspect-square max-w-[180px] mx-auto">
+              {frontmatter.image?.url ? (
+                <div class="relative overflow-hidden rounded-full shadow-lg">
                   <img 
                     src={frontmatter.image.url} 
-                    alt={frontmatter.image.alt}
-                    class="w-full h-full object-cover rounded-full"
+                    alt={frontmatter.image?.alt || "Profile Image"}
+                    class="w-full h-full object-cover"
                   />
-                  <a
-                    href="/about-me"
-                    class="flex h-full w-full absolute inset-0"
-                    aria-label="View about me page"></a>
                 </div>
-              </div>
+              ) : (
+                <div class="flex items-center justify-center h-full w-full bg-gradient-to-br from-mint-400/20 to-blue-500/20 dark:from-mint-800/30 dark:to-blue-800/30 rounded-full shadow-lg">
+                  <div class="logo text-3xl text-mint-500 dark:text-mint-400 text-center relative before:absolute before:left-1/2 before:top-1/2 before:h-full before:w-[40%] before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-full before:bg-[#50fd8f25] before:blur-3xl before:opacity-80 before:-z-1">TT</div>
+                </div>
+              )}
             </div>
           </div>
-
-          <div class="w-full flex flex-col justify-center gap-4 max-md:gap-2">
-            <div class="text-center">
-              <Heading textGradient="Jacob Tapfar | TapfarTech" />
+          
+          <div class="md:w-2/3 text-center md:text-left">
+            <div class="mb-2">
+              <span class="inline-block px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm font-medium">
+                {frontmatter.title === "About TapfarTech" ? "Professional Web Development" : "IT Professional & Marine Corps Reservist"}
+              </span>
             </div>
-
-            <p
-              class="text-lg max-xl:text-base text-black dark:text-gray-200 mb-0 leading-8 font-semibold"
-            >
-              <b
-                class="bg-linear-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text"
-                >IT Professional & Marine Corps Reservist</b
-              > with expertise in <b
-                class="bg-linear-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text"
-                >systems administration & web development</b
-              >, passionate about empowering small businesses through technology. Bringing TapfarTech solutions to life. 🚀🎖️
+            <h1 class="text-3xl font-bold text-gray-800 dark:text-white mb-3">{frontmatter.title === "About TapfarTech" ? "TapfarTech" : "Jacob Tapfar | TapfarTech"}</h1>
+            <p class="text-gray-600 dark:text-gray-300">
+              {frontmatter.title === "About TapfarTech" 
+                ? "Modern web development solutions with cutting-edge technologies for businesses of all sizes. Creating exceptional digital experiences that drive results."
+                : "Empowering small businesses with professional web solutions and strategic IT support. Bringing military precision to every technology project."
+              }
             </p>
           </div>
         </div>
       </div>
-      <div class="flex gap-4 items-center">
-        <Heading text="About" textGradient="me" />
-      </div>
 
-      <div class="markdown text-white" id="content">
-        <slot />
+      <div class="bg-white dark:bg-gray-800/50 p-8 rounded-2xl shadow-sm dark:shadow-gray-800/30 border border-neutral-100 dark:border-gray-700/30">
+        <div class="prose prose-lg dark:prose-invert max-w-none prose-headings:text-gray-800 dark:prose-headings:text-white prose-p:text-gray-600 dark:prose-p:text-gray-300" id="content">
+          <slot />
+        </div>
       </div>
     </article>
     <NavArticle title={frontmatter.title} />
@@ -100,7 +84,95 @@ const { frontmatter } = Astro.props;
 
     </div>
   </section>
-  <section class="py-16 px-8 max-md:py-12 mt-10 mb-20 scroll-m-16 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800" id="stack"><div class="flex flex-col gap-12 max-w-5xl justify-center mx-auto"><div class="flex gap-4 items-center justify-center"><Icon class="text-4xl text-riptide-500" name="dashboard" /><Heading text="Tech" textGradient="Stack" level={2} /></div><div class="grid md:grid-cols-3 gap-8"><div class="group relative p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-riptide-300 dark:hover:border-mint-500"><div class="absolute inset-0 bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div><div class="relative text-center"><Icon name="html" class="text-4xl text-orange-500 mb-4 mx-auto" /><h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Front-end</h3><p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">React, Astro, JavaScript, TypeScript, TailwindCSS, and modern UI/UX practices</p></div></div><div class="group relative p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-riptide-300 dark:hover:border-mint-500"><div class="absolute inset-0 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div><div class="relative text-center"><Icon name="node" class="text-4xl text-green-500 mb-4 mx-auto" /><h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Back-end</h3><p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">Node.js, Python, SQL, Firebase, Express, and scalable API design</p></div></div><div class="group relative p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-riptide-300 dark:hover:border-mint-500"><div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div><div class="relative text-center"><Icon name="cloudflare" class="text-4xl text-blue-500 mb-4 mx-auto" /><h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">DevOps</h3><p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">Azure, AWS, Docker, Git, CI/CD, and cloud infrastructure optimization</p></div></div></div><div class="text-center bg-gradient-to-r from-riptide-500 to-mint-500 rounded-2xl p-8 text-white"><h3 class="text-2xl font-bold mb-4">Precision Meets Modern Tech</h3><p class="text-lg text-riptide-100">Delivering enterprise-grade solutions with a focus on discipline, attention to detail, and cutting-edge technology.</p></div></div></section>
+  <section class="py-16 px-8 max-md:py-12 mt-10 mb-20 scroll-m-16" id="stack">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-2xl font-semibold text-center mb-10 text-gray-800 dark:text-white">Technical Expertise</h2>
+      
+      <div class="grid md:grid-cols-3 gap-8 mb-10">
+        <div class="bg-white dark:bg-gray-800/50 rounded-2xl p-6 shadow-sm dark:shadow-gray-800/30 border border-neutral-100 dark:border-gray-700/30">
+          <div class="mb-4">
+            <span class="inline-block p-3 rounded-lg bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400">
+              <Icon name="html" class="h-6 w-6" />
+            </span>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-gray-800 dark:text-white">Front-end</h3>
+          <p class="text-gray-600 dark:text-gray-300">Modern frameworks and libraries for creating responsive, user-friendly interfaces.</p>
+          
+          <ul class="space-y-2 mt-4">
+            <li class="flex items-center text-sm">
+              <Icon name="javascript" class="h-4 w-4 mr-2 text-blue-500" />
+              <span class="text-gray-700 dark:text-gray-300">React & Modern JavaScript</span>
+            </li>
+            <li class="flex items-center text-sm">
+              <Icon name="astro" class="h-4 w-4 mr-2 text-purple-500" />
+              <span class="text-gray-700 dark:text-gray-300">Astro Framework</span>
+            </li>
+            <li class="flex items-center text-sm">
+              <Icon name="tailwind" class="h-4 w-4 mr-2 text-teal-500" />
+              <span class="text-gray-700 dark:text-gray-300">TailwindCSS & UI Design</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="bg-white dark:bg-gray-800/50 rounded-2xl p-6 shadow-sm dark:shadow-gray-800/30 border border-neutral-100 dark:border-gray-700/30">
+          <div class="mb-4">
+            <span class="inline-block p-3 rounded-lg bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400">
+              <Icon name="node" class="h-6 w-6" />
+            </span>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-gray-800 dark:text-white">Back-end</h3>
+          <p class="text-gray-600 dark:text-gray-300">Robust server-side solutions that power secure and scalable applications.</p>
+          
+          <ul class="space-y-2 mt-4">
+            <li class="flex items-center text-sm">
+              <Icon name="node" class="h-4 w-4 mr-2 text-green-500" />
+              <span class="text-gray-700 dark:text-gray-300">Node.js & Express</span>
+            </li>
+            <li class="flex items-center text-sm">
+              <Icon name="python" class="h-4 w-4 mr-2 text-blue-500" />
+              <span class="text-gray-700 dark:text-gray-300">Python Development</span>
+            </li>
+            <li class="flex items-center text-sm">
+              <Icon name="firebase" class="h-4 w-4 mr-2 text-orange-500" />
+              <span class="text-gray-700 dark:text-gray-300">Firebase & Cloud Databases</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="bg-white dark:bg-gray-800/50 rounded-2xl p-6 shadow-sm dark:shadow-gray-800/30 border border-neutral-100 dark:border-gray-700/30">
+          <div class="mb-4">
+            <span class="inline-block p-3 rounded-lg bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">
+              <Icon name="cloudflare" class="h-6 w-6" />
+            </span>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-gray-800 dark:text-white">DevOps</h3>
+          <p class="text-gray-600 dark:text-gray-300">Streamlined deployment and infrastructure management for optimal performance.</p>
+          
+          <ul class="space-y-2 mt-4">
+            <li class="flex items-center text-sm">
+              <Icon name="aws" class="h-4 w-4 mr-2 text-orange-500" />
+              <span class="text-gray-700 dark:text-gray-300">AWS & Cloud Services</span>
+            </li>
+            <li class="flex items-center text-sm">
+              <Icon name="git" class="h-4 w-4 mr-2 text-red-500" />
+              <span class="text-gray-700 dark:text-gray-300">Git & Version Control</span>
+            </li>
+            <li class="flex items-center text-sm">
+              <Icon name="docker" class="h-4 w-4 mr-2 text-blue-500" />
+              <span class="text-gray-700 dark:text-gray-300">Docker & Containerization</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="text-center bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl p-10 text-white shadow-lg">
+        <h3 class="text-2xl font-bold mb-6">Military Precision Meets Technical Excellence</h3>
+        <p class="text-lg max-w-2xl mx-auto opacity-90">
+          I bring the discipline and attention to detail from my military service to every technical solution, ensuring your project is delivered with excellence.
+        </p>
+      </div>
+    </div>
+  </section>
   <Contact />
 </Layout>
 

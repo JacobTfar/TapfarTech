@@ -3,6 +3,11 @@ const allPosts = await Astro.glob("../../pages/blog/posts/*.md");
 const languages = [
     ...new Set(allPosts.map((post) => post.frontmatter.languages).flat()),
 ];
+
+// Add some essential web development technologies that might not be in blog posts
+const essentialTechs = ["html", "css", "javascript", "typescript", "react", "astro", "tailwind"];
+const allTechnologies = [...new Set([...essentialTechs, ...languages])];
+
 import Capsule from "../ui/Capsule.astro";
 
 const { variant = "default" } = Astro.props;
@@ -10,18 +15,29 @@ const { variant = "default" } = Astro.props;
 const baseClasses = "flex flex-wrap";
 
 const variantClasses = {
-    default: "gap-3 max-lg:gap-1",
+    default: "gap-2 max-lg:gap-1",
     vertical: "gap-6 flex-col"
 } as const;
 
 const classes = `${baseClasses} ${variantClasses[variant as keyof typeof variantClasses] || variantClasses.default}`;
+
+// Group technologies by category for better organization
+const frontEndTechs = ["html", "css", "javascript", "typescript", "react", "astro", "tailwind"];
+const backEndTechs = ["node", "express", "python", "firebase", "mysql", "mongodb"];
+
+// Filter all technologies into frontend and backend arrays
+const frontEndTechnologies = allTechnologies.filter(tech => frontEndTechs.includes(tech));
+const backEndTechnologies = allTechnologies.filter(tech => backEndTechs.includes(tech));
+const otherTechnologies = allTechnologies.filter(tech => 
+    !frontEndTechs.includes(tech) && !backEndTechs.includes(tech)
+);
+
+// Combine the arrays with frontend first, then backend, then others
+const orderedTechnologies = [...frontEndTechnologies, ...backEndTechnologies, ...otherTechnologies];
 ---
 
 <div class={classes}>
-    {languages.map((language) => (
+    {orderedTechnologies.map((language) => (
         <Capsule lang={language} linkEnabled={true} size="md" />
     ))}
 </div>
-
-
-
