@@ -5,13 +5,13 @@ import Heading from "../components/ui/Heading.astro";
 const pricingTiers = [
   {
     name: "Basic",
-    price: "$999",
+    price: "$499",
     description: "For small businesses getting started",
     features: [
-      "Custom Website Design",
+      "Template-Based Website",
       "Mobile Responsive",
       "Contact Form",
-      "5 Content Pages",
+      "Up to 5 Pages",
       "Basic SEO Setup",
       "1 Month of Support"
     ],
@@ -19,72 +19,71 @@ const pricingTiers = [
     ctaText: "Get Started"
   },
   {
-    name: "Professional",
-    price: "$2,499",
+    name: "Standard",
+    price: "$999",
     description: "For growing businesses with specific needs",
     features: [
       "Everything in Basic",
-      "E-commerce Integration",
+      "Premium Template Selection",
       "Content Management System",
-      "10 Content Pages",
-      "Advanced SEO Package",
+      "Up to 8 Pages",
       "Social Media Integration",
-      "3 Months of Support"
+      "Google Analytics Setup",
+      "2 Months of Support"
     ],
     highlighted: true,
     ctaText: "Popular Choice"
   },
   {
-    name: "Enterprise",
-    price: "Custom",
-    description: "For larger businesses with complex requirements",
+    name: "Advanced",
+    price: "$1,499+",
+    description: "For businesses needing more customization",
     features: [
-      "Everything in Professional",
-      "Custom Web Application",
-      "Database Integration",
-      "API Development",
-      "User Authentication",
-      "Admin Dashboard",
-      "6 Months of Support",
-      "Priority Response"
+      "Everything in Standard",
+      "E-commerce Integration",
+      "Custom Page Layouts",
+      "Advanced SEO Package",
+      "Basic Form Automation",
+      "Content Upload Assistance",
+      "3 Months of Support"
     ],
     highlighted: false,
-    ctaText: "Contact Us"
+    ctaText: "Contact Me"
   }
 ];
 
 const consultingServices = [
   {
     service: "Technology Assessment",
-    price: "$750",
-    description: "Comprehensive review of your current technology stack and recommendations for improvement."
+    price: "$199",
+    description: "Review of your current technology setup with recommendations for improvement."
   },
   {
-    service: "Digital Strategy Planning",
-    price: "$1,500",
-    description: "Complete digital roadmap development with implementation timeline and budget planning."
+    service: "Website Audit",
+    price: "$149",
+    description: "Comprehensive audit of your website with actionable recommendations for performance, SEO, and usability."
   },
   {
     service: "Software Selection Guidance",
-    price: "$500",
-    description: "Expert advice on choosing the right software solutions for your specific business needs."
+    price: "$99",
+    description: "Recommendations for the right software tools to address your specific business needs."
   },
   {
-    service: "Tech Support Package",
-    price: "$250/month",
-    description: "Ongoing technical support and maintenance for your digital assets."
+    service: "Website Maintenance",
+    price: "$79/month",
+    description: "Regular updates, security patches, and basic content updates for your website."
   }
 ];
 ---
 
 <Layout 
   pageTitle="Pricing | TapfarTech"
-  description="Transparent pricing for our technology services. From web development to technical consulting, find the right solution for your business needs."
+  description="Transparent pricing for my technology services. From web development to technical consulting, find the right solution for your business needs."
   ogimage={{ url: "/images/pricing-og.webp", alt: "TapfarTech pricing and packages" }}
 >
   <div class="relative mx-auto max-w-7xl px-8 max-sm:px-4 py-12">
     <div class="mb-12 text-center">
-      <Heading textGradient="Our Pricing" level={1} />
+      <Heading textGradient="My Pricing" level={1} />
       <p class="text-lg text-gray-600 dark:text-gray-300 mt-4 max-w-3xl mx-auto">
         Transparent pricing for quality technology solutions tailored to your business needs
       </p>
@@ -92,6 +91,14 @@ const consultingServices = [
     
     <section class="mb-20">
       <h2 class="text-2xl font-semibold text-center mb-10 dark:text-white">Web Development Packages</h2>
+      
+      <!-- New Business Banner -->
+      <div class="bg-gradient-to-r from-blue-500/10 to-purple-600/10 dark:from-blue-900/20 dark:to-purple-900/20 rounded-2xl p-6 mb-8 text-center">
+        <h3 class="text-xl font-semibold mb-2 text-gray-800 dark:text-white">New Business Special Offer</h3>
+        <p class="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          As a new technology business, I offer cost-effective solutions by leveraging quality templates and AI tools to create professional websites efficiently. This approach allows me to provide you with a polished online presence at an affordable price point.
+        </p>
+      </div>
       
       <div class="grid md:grid-cols-3 gap-8">
         {pricingTiers.map(tier => (
@@ -125,7 +132,10 @@ const consultingServices = [
     </section>
 
     <section class="mb-20">
-      <h2 class="text-2xl font-semibold text-center mb-10 dark:text-white">Consulting Services</h2>
+      <h2 class="text-2xl font-semibold text-center mb-4 dark:text-white">Consulting Services</h2>
+      <p class="text-center text-gray-600 dark:text-gray-300 mb-10 max-w-3xl mx-auto">
+        I provide professional technology consulting to help your business make informed decisions and optimize your digital strategy.
+      </p>
       
       <div class="overflow-hidden bg-white dark:bg-gray-800/50 rounded-2xl shadow-sm dark:shadow-gray-800/30 border border-neutral-100 dark:border-gray-700/30">
         <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
@@ -150,11 +160,11 @@ const consultingServices = [
     </section>
 
     <section class="text-center mb-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl p-10 text-white shadow-lg">
-      <h2 class="text-2xl font-bold mb-6">Custom Project</h2>
+      <h2 class="text-2xl font-bold mb-6">Custom Website Needs?</h2>
       <p class="text-lg mb-8 max-w-2xl mx-auto opacity-90">
-        Need something specific? We offer custom solutions tailored to your unique business requirements.
+        Have specific requirements that don't fit these packages? I'll find the right template and customization approach to meet your needs at an affordable price point.
       </p>
-      <a href="/contact" class="inline-block bg-white text-blue-600 hover:bg-blue-50 font-medium py-3 px-8 rounded-lg transition">
+      <a href="mailto:info@tapfartech.com" class="inline-block bg-white text-blue-600 hover:bg-blue-50 font-medium py-3 px-8 rounded-lg transition">
         Request a Quote
       </a>
     </section>
@@ -165,22 +175,27 @@ const consultingServices = [
       <div class="space-y-6">
         <div class="p-5 rounded-lg border border-gray-100 dark:border-gray-700">
           <h3 class="text-lg font-medium text-blue-600 dark:text-blue-400 mb-2">How long does it take to complete a website?</h3>
-          <p class="text-gray-600 dark:text-gray-300">Most projects are completed within 4-8 weeks depending on complexity and content requirements.</p>
+          <p class="text-gray-600 dark:text-gray-300">Most basic template-based websites can be completed within 1-3 weeks. More complex sites with customization or e-commerce functionality may take 3-6 weeks. By leveraging proven templates and tools, I can deliver quality results more quickly than traditional custom development.</p>
         </div>
         
         <div class="p-5 rounded-lg border border-gray-100 dark:border-gray-700">
           <h3 class="text-lg font-medium text-blue-600 dark:text-blue-400 mb-2">Do you offer ongoing maintenance?</h3>
-          <p class="text-gray-600 dark:text-gray-300">Yes, we offer monthly maintenance packages to keep your site secure, updated, and performing optimally.</p>
+          <p class="text-gray-600 dark:text-gray-300">Yes, I offer monthly maintenance packages to keep your site secure, updated, and performing optimally. As a solo developer, I provide personalized attention to each client's needs.</p>
         </div>
         
         <div class="p-5 rounded-lg border border-gray-100 dark:border-gray-700">
           <h3 class="text-lg font-medium text-blue-600 dark:text-blue-400 mb-2">What payment methods do you accept?</h3>
-          <p class="text-gray-600 dark:text-gray-300">We accept credit cards, bank transfers, and PayPal. For larger projects, we typically require a 50% deposit upfront.</p>
+          <p class="text-gray-600 dark:text-gray-300">I accept credit cards, bank transfers, and PayPal. For larger projects, I typically require a 50% deposit upfront to begin work.</p>
         </div>
         
         <div class="p-5 rounded-lg border border-gray-100 dark:border-gray-700">
           <h3 class="text-lg font-medium text-blue-600 dark:text-blue-400 mb-2">Are there any hidden fees?</h3>
-          <p class="text-gray-600 dark:text-gray-300">No hidden fees. All costs are discussed and agreed upon before we begin work on your project.</p>
+          <p class="text-gray-600 dark:text-gray-300">No hidden fees. All costs are discussed and agreed upon before I begin work on your project. I value transparency in all client relationships.</p>
+        </div>
+        
+        <div class="p-5 rounded-lg border border-gray-100 dark:border-gray-700">
+          <h3 class="text-lg font-medium text-blue-600 dark:text-blue-400 mb-2">How do you create websites so efficiently?</h3>
+          <p class="text-gray-600 dark:text-gray-300">I use a combination of premium templates, modern frameworks, and AI tools to create professional websites efficiently. This approach allows me to deliver quality results at a fraction of the cost of traditional custom development while still tailoring the site to your specific needs.</p>
         </div>
       </div>
     </section>
