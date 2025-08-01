@@ -2,10 +2,12 @@ import rss, { pagesGlobToRssItems } from '@astrojs/rss';
 
 export async function GET(context) {
   return rss({
-    title: 'Web Development and Technology Blog | Fernando López | EFEELE',
-    description: 'Welcome to my blog, where I share my passion for frontend development, web design, and the latest technology trends.',
+    title: 'TapfarTech Blog | IT Systems & Web Development',
+    description: 'Explore systems administration best practices, web development insights, and technology solutions from Jacob Tapfar, U.S. Marine Corps Reservist and TapfarTech founder.',
     site: context.site,
-    items: await pagesGlobToRssItems(import.meta.glob('./**/*.md')),
-    customData: `<language>es</language>`,
+    items: await pagesGlobToRssItems(
+      import.meta.glob('./blog/posts/*.md')
+    ),
+    customData: `<language>en</language>`,
   });
 }
