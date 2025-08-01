@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Heading from "../components/ui/Heading.astro";
 import PageHeader from "../components/layout/PageHeader.astro";
+import ContactModal from "../components/ui/ContactModal.astro";
 
 const pricingTiers = [
   {
@@ -112,7 +113,10 @@ const consultingServices = [
                 {tier.name !== "Enterprise" && <span class="text-gray-500 dark:text-gray-400">/project</span>}
               </div>
               <p class="text-gray-600 dark:text-gray-300 mb-6">{tier.description}</p>
-              <button class={`w-full py-3 px-4 rounded-md font-medium transition-colors ${tier.highlighted ? 'bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700' : 'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600'}`}>
+              <button 
+                class={`w-full py-3 px-4 rounded-md font-medium transition-colors ${tier.highlighted ? 'bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700' : 'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600'}`}
+                onclick={`window.openContactModal('${tier.name}')`}
+              >
                 {tier.ctaText}
               </button>
             </div>
@@ -166,9 +170,12 @@ const consultingServices = [
       <p class="text-lg mb-8 max-w-2xl mx-auto opacity-90">
         Have specific requirements that don't fit these packages? I'll find the right template and customization approach to meet your needs at an affordable price point.
       </p>
-      <a href="mailto:info@tapfartech.com" class="inline-block bg-white text-blue-600 hover:bg-blue-50 font-medium py-3 px-8 rounded-lg transition">
+      <button 
+        onclick="window.openContactModal('Custom')" 
+        class="inline-block bg-white text-blue-600 hover:bg-blue-50 font-medium py-3 px-8 rounded-lg transition"
+      >
         Request a Quote
-      </a>
+      </button>
     </section>
 
     <section class="bg-white dark:bg-gray-800/50 p-8 rounded-2xl max-w-3xl mx-auto shadow-sm dark:shadow-gray-800/30 border border-neutral-100 dark:border-gray-700/30">
@@ -202,4 +209,7 @@ const consultingServices = [
       </div>
     </section>
   </div>
+  
+  <!-- Add Contact Modal component -->
+  <ContactModal />
 </Layout>

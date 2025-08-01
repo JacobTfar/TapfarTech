@@ -1,0 +1,297 @@
+---
+import { Icon } from "astro-icon/components";
+import { getCollection } from "astro:content";
+
+interface Props {
+  selectedPackage?: string;
+}
+
+const { selectedPackage = "" } = Astro.props;
+
+const [staticData] = await getCollection("staticData");
+const { email } = staticData.data;
+---
+
+<div class="fixed inset-0 items-center justify-center z-50 p-4 hidden" id="contact-modal">
+  <div class="absolute inset-0 bg-black opacity-50" id="modal-overlay"></div>
+  
+  <div class="relative bg-white dark:bg-gray-800 rounded-2xl shadow-lg max-w-lg w-full p-6 z-10 transform transition-all scale-modal">
+    <!-- Close button -->
+    <button 
+      class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 transition-colors"
+      id="close-modal"
+      aria-label="Close contact form"
+    >
+      <Icon name="xmark" class="w-6 h-6" />
+    </button>
+    
+    <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">Get in Touch</h3>
+    <p class="text-gray-600 dark:text-gray-300 mb-2">
+      {selectedPackage ? 
+        `I'd love to discuss the ${selectedPackage} package with you. Please fill out the form below and I'll get back to you shortly.` :
+        `I'd love to discuss how I can help with your project. Please fill out the form below and I'll get back to you shortly.`
+      }
+    </p>
+    <p class="text-sm text-blue-600 dark:text-blue-400 mb-6 flex items-center">
+      <Icon name="envelope" class="w-4 h-4 mr-1" />
+      Your message will be sent to {email}
+    </p>
+    
+    <form id="contact-form" class="space-y-4" onsubmit="return handleSubmit(event)">
+      <input type="hidden" name="package" id="package-field" value={selectedPackage} />
+      
+      <div>
+        <label for="service-package" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Service Package</label>
+        <select 
+          id="service-package" 
+          name="service-package" 
+          required
+          class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-mint-500 focus:border-mint-500 dark:bg-gray-700 dark:text-white"
+        >
+          <option value="">Please select a package</option>
+          <option value="Basic">Basic ($499) - For small businesses getting started</option>
+          <option value="Standard">Standard ($999) - For growing businesses with specific needs</option>
+          <option value="Advanced">Advanced ($1,499+) - For businesses needing more customization</option>
+          <option value="Custom">Custom - I need a tailored solution</option>
+        </select>
+        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">
+          See <a href="/pricing" class="text-blue-600 dark:text-blue-400 hover:underline">pricing page</a> for full package details
+        </p>
+      </div>
+      
+      <div>
+        <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Name</label>
+        <input 
+          type="text" 
+          id="name" 
+          name="name" 
+          required
+          class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-mint-500 focus:border-mint-500 dark:bg-gray-700 dark:text-white"
+        />
+      </div>
+      
+      <div>
+        <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email</label>
+        <input 
+          type="email" 
+          id="email" 
+          name="email" 
+          required
+          class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-mint-500 focus:border-mint-500 dark:bg-gray-700 dark:text-white"
+        />
+      </div>
+      
+      <div>
+        <label for="questions" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Tell me about your project needs</label>
+        <textarea 
+          id="questions" 
+          name="questions" 
+          rows="3"
+          placeholder="Describe what you're looking for and any specific requirements..."
+          class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-mint-500 focus:border-mint-500 dark:bg-gray-700 dark:text-white"
+        ></textarea>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label for="timeline" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Project Timeline <span class="text-gray-500">(optional)</span></label>
+          <input 
+            type="text" 
+            id="timeline" 
+            name="timeline" 
+            placeholder="e.g. 2 months, ASAP, etc."
+            class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-mint-500 focus:border-mint-500 dark:bg-gray-700 dark:text-white"
+          />
+        </div>
+        
+        <div>
+          <label for="budget" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Budget Range <span class="text-gray-500">(optional)</span></label>
+          <input 
+            type="text" 
+            id="budget" 
+            name="budget" 
+            placeholder="e.g. $500-$1000, flexible, etc."
+            class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-mint-500 focus:border-mint-500 dark:bg-gray-700 dark:text-white"
+          />
+        </div>
+      </div>
+      
+      <div>
+        <label for="additional" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Additional Information <span class="text-gray-500">(optional)</span></label>
+        <textarea 
+          id="additional" 
+          name="additional" 
+          rows="2"
+          placeholder="Any other details you'd like to share..."
+          class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-mint-500 focus:border-mint-500 dark:bg-gray-700 dark:text-white"
+        ></textarea>
+      </div>
+      
+      <div class="flex justify-end">
+        <button
+          type="submit"
+          class="px-4 py-2 bg-mint-500 hover:bg-mint-600 text-white font-medium rounded-md shadow-sm transition-colors flex items-center"
+        >
+          <Icon name="paperplane" class="w-4 h-4 mr-2" />
+          Send Message
+        </button>
+      </div>
+    </form>
+    
+    <div id="form-success" class="hidden text-center py-8">
+      <Icon name="paperplane" class="w-16 h-16 text-green-500 mx-auto mb-4" />
+      <h4 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Message Ready to Send!</h4>
+      <p class="text-gray-600 dark:text-gray-300">
+        Your email client will open with your inquiry pre-filled. Please review and send the email to <span class="text-blue-600 dark:text-blue-400 font-medium">{email}</span>.
+      </p>
+      <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">
+        If your email client doesn't open automatically, please email me directly at <a href={`mailto:${email}`} class="text-blue-600 dark:text-blue-400 hover:underline">{email}</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+<script define:vars={{ email }}>
+  document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('contact-modal');
+    const overlay = document.getElementById('modal-overlay');
+    const closeBtn = document.getElementById('close-modal');
+    const form = document.getElementById('contact-form');
+    const formSuccess = document.getElementById('form-success');
+    const packageField = document.getElementById('package-field');
+    
+    // Close modal when clicking outside or on close button
+    if (overlay) overlay.addEventListener('click', closeModal);
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    
+    // Export function to global scope
+    window.openContactModal = (packageName = '') => {
+      if (packageField) packageField.value = packageName;
+      
+      // Pre-select the package in the dropdown
+      const packageDropdown = document.getElementById('service-package');
+      if (packageDropdown && packageName) {
+        // Find the option that matches the packageName
+        const options = packageDropdown.options;
+        for (let i = 0; i < options.length; i++) {
+          if (options[i].value === packageName) {
+            packageDropdown.selectedIndex = i;
+            break;
+          }
+        }
+      }
+      
+      if (modal) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.classList.add('overflow-hidden');
+      }
+    };
+    
+    function closeModal() {
+      if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.classList.remove('overflow-hidden');
+        
+        // Reset form after closing
+        if (form) form.reset();
+        if (formSuccess) formSuccess.classList.add('hidden');
+        if (form) form.classList.remove('hidden');
+      }
+    }
+    
+    // Handle form submission
+    window.handleSubmit = (event) => {
+      event.preventDefault();
+      
+      const name = document.getElementById('name').value;
+      const userEmail = document.getElementById('email').value;
+      const questions = document.getElementById('questions').value;
+      const timeline = document.getElementById('timeline').value;
+      const budget = document.getElementById('budget').value;
+      const additional = document.getElementById('additional').value;
+      
+      // Get the package from the dropdown, not the hidden field
+      const packageDropdown = document.getElementById('service-package');
+      const packageName = packageDropdown ? packageDropdown.value : '';
+      
+      // Construct the message body with all the fields
+      let messageBody = `Name: ${name}\nEmail: ${userEmail}\n\n`;
+      messageBody += `Service Package: ${packageName}\n\n`;
+      messageBody += `Questions/Requirements:\n${questions}\n\n`;
+      
+      if (timeline) {
+        messageBody += `Timeline: ${timeline}\n`;
+      }
+      
+      if (budget) {
+        messageBody += `Budget: ${budget}\n`;
+      }
+      
+      if (additional) {
+        messageBody += `\nAdditional Information:\n${additional}\n`;
+      }
+      
+      messageBody += `\n---\nSent from TapfarTech website contact form`;
+      
+      // Construct mailto URL with form data
+      const subject = `Website Inquiry${packageName ? ' - ' + packageName + ' Package' : ''}`;
+      const mailtoUrl = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(messageBody)}`;
+      
+      // Show success message first
+      if (form) form.classList.add('hidden');
+      if (formSuccess) formSuccess.classList.remove('hidden');
+      
+      // Open email client after a short delay to allow the user to see the success message
+      setTimeout(() => {
+        window.location.href = mailtoUrl;
+      }, 1000);
+      
+      // Close modal after delay
+      setTimeout(closeModal, 4000);
+      
+      return false;
+    };
+  });
+</script>
+
+<style>
+  /* Fade in animation */
+  #contact-modal:not(.hidden) {
+    animation: fadeIn 0.3s ease-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  /* Scale animation for modal content */
+  .scale-modal {
+    animation: scaleIn 0.3s ease-out forwards;
+  }
+  
+  @keyframes scaleIn {
+    from { 
+      opacity: 0;
+      transform: scale(0.95); 
+    }
+    to { 
+      opacity: 1;
+      transform: scale(1); 
+    }
+  }
+  
+  /* Focus styles for inputs */
+  input:focus, textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(60, 180, 150, 0.25);
+  }
+  
+  /* Style for placeholder text in textareas */
+  textarea::placeholder {
+    color: #9ca3af;
+    opacity: 0.7;
+  }
+</style>
